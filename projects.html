@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Fahrendra Khoirul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23F26A3D'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23F8F7F3' font-family='Georgia, serif' font-weight='500'%3EF%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="tempo-line"></div>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark">fahrendra<span>.</span>khoirul</a>
+    <button class="nav-toggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Work</a></li>
+        <li><a href="blog.html">Tulisan</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap" style="padding-bottom:0;">
+    <span class="eyebrow">Semua proyek</span>
+    <h1 class="reveal" style="font-size:clamp(2.5rem,5vw,3.5rem); max-width:20ch;">Proyek &amp; eksperimen.</h1>
+    <p class="reveal" style="color:var(--muted); max-width:52ch; margin-top:1.25rem; font-size:1.125rem; line-height:1.7;">
+      Campuran proyek profesional, project personal, dan kontribusi open source — biasanya lahir dari rasa penasaran, bukan cuma requirement.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="filter-row reveal">
+      <button class="filter-chip active" data-filter="all">Semua</button>
+      <button class="filter-chip" data-filter="work">Work</button>
+      <button class="filter-chip" data-filter="personal">Personal</button>
+      <button class="filter-chip" data-filter="opensource">Open Source</button>
+    </div>
+
+    <div class="project-grid reveal">
+      <a href="https://pub.dev/packages/whats_new_kit" target="_blank" rel="noopener" class="project-card" data-tags="personal,opensource">
+        <span class="number">01</span>
+        <div>
+          <h3>whats_new_kit</h3>
+          <span class="category">Open Source</span>
+        </div>
+        <p>Flutter package untuk in-app "What's New" / release notes. Dari problem changelog berantakan, jadi reusable package yang dipublish ke pub.dev.</p>
+        <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">pub.dev</span></div>
+        <span class="arrow">Lihat detail →</span>
+      </a>
+
+      <a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener" class="project-card" data-tags="personal">
+        <span class="number">02</span>
+        <div>
+          <h3>JLPT Mini Game</h3>
+          <span class="category">Personal</span>
+        </div>
+        <p>Game kecil untuk latihan JLPT — lahir dari rasa penasaran sama bahasa Jepang. Belajar sambil main, nggak terasa kayak belajar.</p>
+        <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Game</span></div>
+        <span class="arrow">Lihat detail →</span>
+      </a>
+
+      <a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener" class="project-card" data-tags="personal">
+        <span class="number">03</span>
+        <div>
+          <h3>Tadaa</h3>
+          <span class="category">Personal</span>
+        </div>
+        <p>Personal productivity app dengan sistem focus-based dan daily reset. Dibangun pakai Flutter, Riverpod, dan Drift.</p>
+        <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Riverpod</span><span class="tag">Drift</span></div>
+        <span class="arrow">Lihat detail →</span>
+      </a>
+
+      <a href="#" class="project-card" data-tags="work">
+        <span class="number">04</span>
+        <div>
+          <h3>Medicare App</h3>
+          <span class="category">Work</span>
+        </div>
+        <p>Healthcare mobile ecosystem: clinic management, home nursing, wallet/payment, dan pharmacy integration. Multi-fitur, multi-stakeholder.</p>
+        <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Healthcare</span></div>
+        <span class="arrow">Lihat detail →</span>
+      </a>
+
+      <a href="#" class="project-card" data-tags="work">
+        <span class="number">05</span>
+        <div>
+          <h3>DocLocum App</h3>
+          <span class="category">Work</span>
+        </div>
+        <p>Aplikasi manajemen tenaga medis locum — connecting dokter pengganti dengan fasilitas kesehatan yang butuh.</p>
+        <div class="tag-row"><span class="tag">Flutter</span><span class="tag">Healthcare</span></div>
+        <span class="arrow">Lihat detail →</span>
+      </a>
+
+      <a href="#" class="project-card" data-tags="work">
+        <span class="number">06</span>
+        <div>
+          <h3>PSLC Indonesia</h3>
+          <span class="category">Work</span>
+        </div>
+        <p>Platform digital untuk PSLC Indonesia — mendukung operasional dan program yang dijalankan.</p>
+        <div class="tag-row"><span class="tag">Web</span><span class="tag">Education</span></div>
+        <span class="arrow">Lihat detail →</span>
+      </a>
+
+      <a href="#" class="project-card" data-tags="work">
+        <span class="number">07</span>
+        <div>
+          <h3>Tarkam.id</h3>
+          <span class="category">Work</span>
+        </div>
+        <p>Platform komunitas sepak bola grassroots Indonesia — tarung komunitas, tapi versi digital.</p>
+        <div class="tag-row"><span class="tag">Web</span><span class="tag">Sports</span></div>
+        <span class="arrow">Lihat detail →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="mono">© 2026 Fahrendra Khoirul</span>
+    <ul class="footer-links">
+      <li><a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
