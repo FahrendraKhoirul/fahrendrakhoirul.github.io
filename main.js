@@ -1,18 +1,16 @@
 // ============================================
-// Tempo line — scroll progress
+// Manifesto hero — sequential line reveals
 // ============================================
-function initTempoLine() {
-  const bar = document.querySelector(".tempo-line");
-  if (!bar) return;
-  const update = () => {
-    const h = document.documentElement;
-    const scrolled = h.scrollTop;
-    const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (scrolled / max) * 100 : 0;
-    bar.style.width = pct + "%";
-  };
-  document.addEventListener("scroll", update, { passive: true });
-  update();
+function initManifesto() {
+  const lines = document.querySelectorAll(".manifesto-line");
+  const sub = document.querySelector(".manifesto-sub");
+  if (!lines.length) return;
+
+  // Trigger reveal on load with staggered timing
+  requestAnimationFrame(() => {
+    lines.forEach((line) => line.classList.add("in"));
+    if (sub) sub.classList.add("in");
+  });
 }
 
 // ============================================
@@ -31,7 +29,7 @@ function initNavToggle() {
 }
 
 // ============================================
-// Reveal-on-scroll
+// Reveal-on-scroll (generic)
 // ============================================
 function initReveal() {
   const els = document.querySelectorAll(".reveal");
@@ -48,6 +46,26 @@ function initReveal() {
     { threshold: 0.15 }
   );
   els.forEach((el) => io.observe(el));
+}
+
+// ============================================
+// Staggered children reveal
+// ============================================
+function initStagger() {
+  const containers = document.querySelectorAll(".stagger");
+  if (!containers.length) return;
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  containers.forEach((el) => io.observe(el));
 }
 
 // ============================================
@@ -86,18 +104,12 @@ function initProjectFilter() {
 
 // ============================================
 // Medium RSS embed (blog.html)
-// EDIT ME: replace MEDIUM_USERNAME below with your handle (without @)
 // ============================================
 const MEDIUM_USERNAME = "fahrendra.khoirul";
 
 async function loadMediumPosts() {
   const list = document.querySelector(".post-list");
   if (!list) return;
-
-  if (MEDIUM_USERNAME === "your-medium-handle") {
-    list.innerHTML = `<p class="state-msg">// Set MEDIUM_USERNAME in js/main.js to load your posts automatically.</p>`;
-    return;
-  }
 
   const feedUrl = `https://medium.com/feed/@${MEDIUM_USERNAME}`;
   const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
@@ -112,7 +124,7 @@ async function loadMediumPosts() {
     list.innerHTML = "";
     data.items.slice(0, 12).forEach((post) => {
       const date = new Date(post.pubDate);
-      const dateStr = date.toLocaleDateString("id-ID", {
+      const dateStr = date.toLocaleDateString("en-US", {
         day: "2-digit",
         month: "short",
         year: "numeric",
@@ -125,20 +137,24 @@ async function loadMediumPosts() {
       row.innerHTML = `
         <span class="post-date">${dateStr}</span>
         <h3>${post.title}</h3>
-        <span class="arrow">Baca →</span>
+        <span class="arrow">Read &rarr;</span>
       `;
       list.appendChild(row);
     });
     initReveal();
   } catch (err) {
-    list.innerHTML = `<p class="state-msg">// couldn't load Medium feed right now — <a href="https://medium.com/@${MEDIUM_USERNAME}" target="_blank" rel="noopener">baca langsung di Medium ↗</a></p>`;
+    list.innerHTML = `<p class="state-msg">// couldn't load Medium feed — <a href="https://medium.com/@${MEDIUM_USERNAME}" target="_blank" rel="noopener">read on Medium &nearr;</a></p>`;
   }
 }
 
+// ============================================
+// Init
+// ============================================
 document.addEventListener("DOMContentLoaded", () => {
-  initTempoLine();
+  initManifesto();
   initNavToggle();
   initReveal();
+  initStagger();
   initActiveLink();
   initProjectFilter();
   loadMediumPosts();
