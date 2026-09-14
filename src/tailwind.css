@@ -59,10 +59,54 @@
     transition: transform 700ms ease-in-out, opacity 700ms ease-in-out;
   }
 
+  .work-projects-cta {
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+
   .work-projects-laptop {
-    transform: translate(2.25rem, 31%) rotate(-22deg);
+    transform: translate(2.25rem, 42%) rotate(-22deg);
     transform-origin: center;
-    transition: transform 700ms ease-in-out;
+    transition: transform 500ms ease-out;
+  }
+
+  .awards-trophy {
+    position: absolute;
+    right: -4%;
+    bottom: -1.75rem;
+    width: 42%;
+    transform: rotate(8deg);
+    transform-origin: center bottom;
+    transition: transform 500ms ease-out;
+  }
+
+  .awards-card:hover .awards-trophy {
+    transform: translate(-1.5rem, -2.25rem) rotate(5deg) scale(1.12);
+  }
+
+  .gallery-controls,
+  .gallery-dots {
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+  }
+
+  .gallery-card:hover .gallery-controls,
+  .gallery-card:hover .gallery-dots,
+  .gallery-card:focus-within .gallery-controls,
+  .gallery-card:focus-within .gallery-dots {
+    opacity: 1;
+  }
+
+  .gallery-image {
+    opacity: 1;
+    transition: opacity 500ms ease-out;
+  }
+
+  .gallery-image.is-changing {
+    opacity: 0;
+  }
+
+  .gallery-dot.is-active {
+    transform: scale(1.35);
   }
 
   .skip-link {
@@ -110,6 +154,48 @@
 
   .intro-card:hover .intro-card-image {
     transform: scale(1.035);
+  }
+
+  .intro-card-hover {
+    opacity: 0;
+    transition: opacity 500ms var(--ease-out-expo), transform 700ms ease-out;
+  }
+
+  .intro-card:hover .intro-card-hover {
+    opacity: 1;
+    transform: scale(1.035);
+  }
+
+  .intro-note {
+    position: absolute;
+    color: #1768e5;
+    font-family: "Geist Mono", monospace;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0;
+    -webkit-text-stroke: 2px #fff;
+    paint-order: stroke fill;
+    filter: drop-shadow(0 4px 3px rgb(29 35 48 / 34%)) drop-shadow(0 8px 10px rgb(29 35 48 / 18%));
+    text-shadow: 0 3px 8px rgb(29 35 48 / 24%);
+    animation: intro-note-float var(--note-duration) var(--note-delay) var(--ease-out-expo) forwards;
+  }
+
+  @keyframes intro-note-float {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 0.75rem, 0) rotate(var(--note-rotation)) scale(0.72);
+    }
+    18% {
+      opacity: 1;
+    }
+    78% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0;
+      transform: translate3d(var(--note-drift), -2.5rem, 0) rotate(calc(var(--note-rotation) + 8deg)) scale(1);
+    }
   }
 
   .filter-chip.active {
@@ -275,9 +361,10 @@
   .intro-visual::after {
     position: absolute;
     inset: 0;
+    z-index: 3;
     content: "";
     pointer-events: none;
-    background: linear-gradient(90deg, #fff 0%, rgb(255 255 255 / 86%) 13%, rgb(255 255 255 / 28%) 42%, transparent 72%);
+    background: linear-gradient(90deg, #fff 0%, rgb(255 255 255 / 86%) 10%, rgb(255 255 255 / 28%) 30%, transparent 52%);
   }
 
   .piano-glow {

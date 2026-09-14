@@ -24,6 +24,8 @@
         </div>
         <figure class="intro-visual absolute inset-y-0 right-0 m-0 w-[54%] overflow-hidden bg-[#d7b8a4] before:absolute before:inset-y-0 before:left-0 before:z-[1] before:w-14 before:bg-gradient-to-r before:from-white before:to-transparent">
           <img class="intro-card-image h-full w-full object-cover object-left saturate-90 transition-transform duration-700 ease-out" src="assets/foto_profile.jpg" alt="Hand playing piano keys">
+          <img class="intro-card-hover pointer-events-none absolute inset-0 z-[2] h-full w-full object-cover object-left" src="assets/foto_profile_hover.svg" alt="">
+          <div class="intro-notes pointer-events-none absolute inset-0 z-[4]" aria-hidden="true"></div>
         </figure>
       </article>
 
@@ -32,35 +34,61 @@
       </article>
 
 
-      <a href="projects.html" class="work-projects-card bento-enter group relative col-span-1 grid min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-mint p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:p-8 md:col-span-4 md:min-h-[220px] md:grid-cols-[minmax(0,1fr)_minmax(130px,0.8fr)] md:p-6 md:rounded-[22px]" style="--enter: 190ms">
-        <div class="work-projects-copy relative z-10 flex flex-col justify-between">
+      <a href="projects.html" class="work-projects-card bento-enter group relative col-span-1 grid min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-mint p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:p-8 md:col-span-5 md:min-h-[220px] md:grid-cols-[minmax(0,1fr)_minmax(130px,0.8fr)] md:p-6 md:rounded-[22px]" style="--enter: 190ms">
+        <div class="work-projects-copy relative z-10 flex h-full flex-col justify-between">
           
-          <h2 class="mt-7 max-w-[8ch] text-[clamp(1.6rem,2.5vw,2.4rem)] leading-[1.02] font-medium">Work &amp;<br>projects.</h2>
-          <span class="mt-6 inline-flex items-center gap-2 text-[0.76rem] font-semibold">See selected work <b class="grid size-7 place-items-center rounded-full bg-white text-base text-brand transition duration-300 group-hover:translate-x-1 group-hover:bg-brand group-hover:text-white">→</b></span>
+          <h2 class="max-w-[8ch] text-[clamp(1.6rem,2.5vw,2.4rem)] leading-[1.02] font-medium">Work &amp;<br>projects.</h2>
+          <span class="work-projects-cta mt-6 inline-flex items-center gap-2 text-[0.76rem] font-semibold">See selected work <b class="grid size-7 place-items-center rounded-full bg-white text-base text-brand transition duration-500 ease-out group-hover:translate-x-1 group-hover:bg-brand group-hover:text-white">→</b></span>
         </div>
         <div class="work-projects-laptop pointer-events-none absolute right-[-8%] bottom-[-5%] w-[50%] md:right-[-9%] md:bottom-[-5%] md:w-[50%]" aria-hidden="true">
           <img class="block h-auto w-full drop-shadow-[0_18px_16px_rgb(29_35_48_/_20%)]" src="assets/macbook.svg" alt="MacBook showing a project workspace">
         </div>
       </a>
 
-      <article class="bento-enter relative col-span-1 min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-pink p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] sm:p-8 md:col-span-5 md:min-h-[220px] md:p-6 md:rounded-[22px]" style="--enter: 250ms">
-        <div class="relative z-10">
-          <h2 class="mt-3.5 max-w-[9ch] text-[clamp(1.5rem,2.4vw,2.35rem)] leading-[1.04] font-medium">I play piano<br>for the pauses.</h2>
+      <article class="awards-card bento-enter group relative col-span-1 min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-[#dbe8f5] p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] sm:p-8 md:col-span-4 md:min-h-[220px] md:p-6 md:rounded-[22px]" style="--enter: 250ms">
+        <div class="awards-copy relative z-10 flex h-full flex-col justify-between md:max-w-[62%]">
+          <h2 class="max-w-[10ch] text-[clamp(1.5rem,2.4vw,2.35rem)] leading-[1.04] font-medium">Small wins.</h2>
+          <span class="awards-cta inline-flex items-center gap-2 text-[0.76rem] font-semibold">See the wins <b class="grid size-7 place-items-center rounded-full bg-white text-base text-brand transition duration-500 ease-out group-hover:translate-x-1 group-hover:bg-brand group-hover:text-white">→</b></span>
         </div>
-        <div class="absolute right-[-4%] bottom-[8%] h-[60%] w-[61%] rotate-[-5deg]" aria-hidden="true">
-          <div class="piano-glow"></div>
-          <div class="piano-keyboard absolute right-0 bottom-0 flex h-[57%] w-full overflow-hidden rounded-[11px] border-[6px] border-[#33313b] bg-[#33313b] px-[7px] py-1 shadow-[14px_16px_0_rgb(29_35_48_/_12%)]"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
-        <button class="sound-toggle absolute bottom-4 left-4 z-10 inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-3 py-2 text-[0.68rem] font-medium text-ink transition hover:bg-white active:scale-[0.97] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:bottom-7 sm:left-7 md:bottom-6 md:left-6" type="button" aria-pressed="false"><span class="sound-icon" aria-hidden="true">♪</span><span>Play a note</span></button>
+        <img class="awards-trophy pointer-events-none drop-shadow-[0_18px_16px_rgb(29_35_48_/_20%)]" src="assets/trophy.png" alt="">
       </article>
 
       <a href="blog.html" class="bento-enter group relative col-span-1 flex min-h-[240px] min-w-0 flex-col justify-between overflow-hidden rounded-[18px] border border-line bg-sun p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:p-8 md:col-span-3 md:min-h-[220px] md:p-6 md:rounded-[22px]" style="--enter: 310ms">
         <div class="relative z-10">
-          <h2 class="max-w-full text-[clamp(1.6rem,2.5vw,2.4rem)] leading-[1.02] font-medium">Notes &amp; ideas.</h2>
+          <h2 class="max-w-full text-[clamp(1.6rem,2.5vw,2.4rem)] leading-[1.02] font-medium">Yes, yapping.</h2>
         </div>
-        <span class="relative z-10 inline-flex self-start items-center gap-2 text-[0.76rem] font-semibold">Read notes <b class="grid size-7 place-items-center rounded-full bg-white text-base text-brand transition duration-300 group-hover:translate-x-1 group-hover:bg-brand group-hover:text-white">→</b></span>
-        <img class="pointer-events-none absolute right-[-9%] bottom-[-45%] w-[48%] rotate-[10deg] drop-shadow-[0_18px_16px_rgb(29_35_48_/_22%)] transition duration-500 ease-out group-hover:-translate-x-[3rem] group-hover:-translate-y-[2.5rem] group-hover:scale-[0.88] group-hover:rotate-[5deg] md:right-[-11%] md:bottom-[-48%] md:w-[52%]" src="assets/notebook.svg" alt="Notebook with a bookmark">
+        <span class="relative z-10 inline-flex self-start items-center gap-2 text-[0.76rem] font-semibold">Read notes <b class="grid size-7 place-items-center rounded-full bg-white text-base text-brand transition duration-500 ease-out group-hover:translate-x-1 group-hover:bg-brand group-hover:text-white">→</b></span>
+        <img class="pointer-events-none absolute right-[-9%] bottom-[-54%] w-[48%] rotate-[10deg] drop-shadow-[0_18px_16px_rgb(29_35_48_/_22%)] transition duration-500 ease-out group-hover:-translate-x-[3rem] group-hover:-translate-y-[2.5rem] group-hover:scale-[0.88] group-hover:rotate-[5deg] md:right-[-11%] md:bottom-[-57%] md:w-[52%]" src="assets/notebook.svg" alt="Notebook with a bookmark">
       </a>
+
+      <article class="bento-enter relative col-span-1 min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-pink p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] sm:p-8 md:col-span-9 md:min-h-[220px] md:rounded-[22px]" style="--enter: 370ms">
+        <div class="relative z-10">
+          <h2 class="mt-3.5 max-w-[9ch] text-[clamp(1.5rem,2.4vw,2.35rem)] leading-[1.04] font-medium">I play piano<br>for the pauses.</h2>
+        </div>
+        <div class="absolute right-[-4%] bottom-[8%] h-[60%] w-[61%] rotate-[-5deg] md:right-[4%] md:w-[42%]" aria-hidden="true">
+          <div class="piano-glow"></div>
+          <div class="piano-keyboard absolute right-0 bottom-0 flex h-[57%] w-full overflow-hidden rounded-[11px] border-[6px] border-[#33313b] bg-[#33313b] px-[7px] py-1 shadow-[14px_16px_0_rgb(29_35_48_/_12%)]"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <button class="sound-toggle absolute bottom-4 left-4 z-10 inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-3 py-2 text-[0.68rem] font-medium text-ink transition hover:bg-white active:scale-[0.97] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:bottom-7 sm:left-7 md:bottom-6 md:left-6" type="button" aria-pressed="false"><span class="sound-icon" aria-hidden="true">♪</span><span>Play a note</span></button>
+      </article>
+
+      <article class="gallery-card bento-enter group relative col-span-1 min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-[#e9eef2] shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] focus-within:outline-3 focus-within:outline-brand focus-within:outline-offset-3 md:col-span-3 md:min-h-[220px] md:rounded-[22px]" style="--enter: 410ms">
+        <div class="gallery-media relative flex h-full w-full items-center justify-center overflow-hidden">
+          <img class="gallery-image h-full w-full object-contain" src="assets/WhatsApp Image 2026-09-14 at 20.53.29.jpeg" alt="Travel photo 1 of 6">
+        </div>
+        <div class="gallery-controls pointer-events-none absolute inset-0 z-10 flex items-center justify-between p-3" aria-label="Gallery navigation">
+          <button class="gallery-control pointer-events-auto grid size-7 place-items-center rounded-full bg-white text-base leading-none font-bold text-brand shadow-[0_4px_12px_rgb(29_35_48_/_14%)] transition duration-500 ease-out hover:bg-brand hover:text-white focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-prev aria-label="Show previous photo">←</button>
+          <button class="gallery-control pointer-events-auto grid size-7 place-items-center rounded-full bg-white text-base leading-none font-bold text-brand shadow-[0_4px_12px_rgb(29_35_48_/_14%)] transition duration-500 ease-out hover:bg-brand hover:text-white focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-next aria-label="Show next photo">→</button>
+        </div>
+        <div class="gallery-dots pointer-events-none absolute right-0 bottom-3 left-0 z-10 flex justify-center gap-1.5" aria-label="Choose a gallery photo">
+          <button class="gallery-dot pointer-events-auto size-2 rounded-full bg-ink transition duration-500 ease-out focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-dot="0" aria-label="Show gallery photo 1"></button>
+          <button class="gallery-dot pointer-events-auto size-2 rounded-full bg-white/80 transition duration-500 ease-out focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-dot="1" aria-label="Show gallery photo 2"></button>
+          <button class="gallery-dot pointer-events-auto size-2 rounded-full bg-white/80 transition duration-500 ease-out focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-dot="2" aria-label="Show gallery photo 3"></button>
+          <button class="gallery-dot pointer-events-auto size-2 rounded-full bg-white/80 transition duration-500 ease-out focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-dot="3" aria-label="Show gallery photo 4"></button>
+          <button class="gallery-dot pointer-events-auto size-2 rounded-full bg-white/80 transition duration-500 ease-out focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-dot="4" aria-label="Show gallery photo 5"></button>
+          <button class="gallery-dot pointer-events-auto size-2 rounded-full bg-white/80 transition duration-500 ease-out focus-visible:outline-2 focus-visible:outline-brand" type="button" data-gallery-dot="5" aria-label="Show gallery photo 6"></button>
+        </div>
+      </article>
     </div>
 
     <section class="mt-4 md:mt-5" aria-label="GitHub">

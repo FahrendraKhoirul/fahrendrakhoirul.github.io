@@ -28,21 +28,138 @@ function initPianoTile() {
 }
 
 // ============================================
+// Home photo gallery
+// ============================================
+function initGalleryTile() {
+  const gallery = document.querySelector(".gallery-card");
+  const image = gallery?.querySelector(".gallery-image");
+  if (!gallery || !image) return;
+
+  const photos = [
+    "WhatsApp Image 2026-09-14 at 20.53.29.jpeg",
+    "WhatsApp Image 2026-09-14 at 20.53.42.jpeg",
+    "WhatsApp Image 2026-09-14 at 20.53.44.jpeg",
+    "WhatsApp Image 2026-09-14 at 20.53.47.jpeg",
+    "WhatsApp Image 2026-09-14 at 20.53.48.jpeg",
+    "WhatsApp Image 2026-09-14 at 20.53.50.jpeg",
+  ];
+  const dots = [...gallery.querySelectorAll("[data-gallery-dot]")];
+  let currentIndex = 0;
+  let autoSlideTimer;
+  let isPaused = false;
+
+  const render = (index) => {
+    currentIndex = (index + photos.length) % photos.length;
+    image.classList.add("is-changing");
+    image.src = `assets/${photos[currentIndex]}`;
+    image.alt = `Travel photo ${currentIndex + 1} of ${photos.length}`;
+    image.onload = () => image.classList.remove("is-changing");
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === currentIndex);
+      dot.classList.toggle("bg-brand", dotIndex === currentIndex);
+      dot.classList.toggle("bg-white/80", dotIndex !== currentIndex);
+      dot.setAttribute("aria-current", dotIndex === currentIndex ? "true" : "false");
+    });
+  };
+
+  const startAutoSlide = () => {
+    window.clearInterval(autoSlideTimer);
+    if (isPaused) return;
+    autoSlideTimer = window.setInterval(() => render(currentIndex + 1), 4000);
+  };
+
+  const pauseAutoSlide = () => {
+    isPaused = true;
+    window.clearInterval(autoSlideTimer);
+  };
+
+  const resumeAutoSlide = () => {
+    isPaused = false;
+    startAutoSlide();
+  };
+
+  const renderAndRestart = (index) => {
+    render(index);
+    startAutoSlide();
+  };
+
+  gallery.querySelector("[data-gallery-prev]")?.addEventListener("click", () => renderAndRestart(currentIndex - 1));
+  gallery.querySelector("[data-gallery-next]")?.addEventListener("click", () => renderAndRestart(currentIndex + 1));
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => renderAndRestart(Number(dot.dataset.galleryDot)));
+  });
+
+  render(0);
+  gallery.addEventListener("pointerenter", pauseAutoSlide);
+  gallery.addEventListener("pointerleave", resumeAutoSlide);
+  gallery.addEventListener("focusin", pauseAutoSlide);
+  gallery.addEventListener("focusout", (event) => {
+    if (!gallery.contains(event.relatedTarget)) resumeAutoSlide();
+  });
+  startAutoSlide();
+}
+
+// ============================================
+// Home profile floating notes
+// ============================================
+function initProfileNotes() {
+  const card = document.querySelector(".intro-card");
+  const notesLayer = card?.querySelector(".intro-notes");
+  if (!card || !notesLayer) return;
+
+  let cleanupTimer;
+  const noteGlyphs = ["♪", "♫", "♩", "♪"];
+
+  const clearNotes = () => {
+    window.clearTimeout(cleanupTimer);
+    notesLayer.replaceChildren();
+    card.classList.remove("is-notes-active");
+  };
+
+  const spawnNotes = () => {
+    window.clearTimeout(cleanupTimer);
+    notesLayer.replaceChildren();
+    card.classList.add("is-notes-active");
+
+    noteGlyphs.forEach((glyph, index) => {
+      const note = document.createElement("span");
+      note.className = "intro-note";
+      note.textContent = glyph;
+      note.style.right = `${8 + Math.random() * 30}%`;
+      note.style.top = `${10 + Math.random() * 68}%`;
+      note.style.setProperty("--note-delay", `${index * 90 + Math.random() * 90}ms`);
+      note.style.setProperty("--note-duration", `${1150 + Math.random() * 500}ms`);
+      note.style.setProperty("--note-drift", `${-0.5 + Math.random() * 1}rem`);
+      note.style.setProperty("--note-rotation", `${-12 + Math.random() * 24}deg`);
+      notesLayer.appendChild(note);
+    });
+
+    cleanupTimer = window.setTimeout(clearNotes, 2100);
+  };
+
+  card.addEventListener("pointerenter", spawnNotes);
+  card.addEventListener("focusin", spawnNotes);
+  card.addEventListener("pointerleave", clearNotes);
+  card.addEventListener("focusout", (event) => {
+    if (!card.contains(event.relatedTarget)) clearNotes();
+  });
+}
+
+// ============================================
 // Home work and projects tile
 // ============================================
 function initWorkProjectsTile() {
   const tile = document.querySelector(".work-projects-card");
   if (!tile) return;
 
-  const copy = tile.querySelector(".work-projects-copy");
+  const cta = tile.querySelector(".work-projects-cta");
   const laptop = tile.querySelector(".work-projects-laptop");
 
   const setActive = (isActive) => {
     tile.classList.toggle("is-hovered", isActive);
 
-    if (copy) {
-      copy.style.opacity = isActive ? "0.85" : "";
-      copy.style.transform = isActive ? "scale(0.9)" : "";
+    if (cta) {
+      cta.style.opacity = isActive ? "0.85" : "";
     }
 
     if (laptop) {
@@ -168,6 +285,8 @@ async function loadMediumPosts() {
 document.addEventListener("DOMContentLoaded", () => {
   initManifesto();
   initPianoTile();
+  initGalleryTile();
+  initProfileNotes();
   initWorkProjectsTile();
   initReveal();
   initStagger();
