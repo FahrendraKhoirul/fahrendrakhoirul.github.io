@@ -36,12 +36,12 @@ function initGalleryTile() {
   if (!gallery || !image) return;
 
   const photos = [
-    "WhatsApp Image 2026-09-14 at 20.53.29.jpeg",
-    "WhatsApp Image 2026-09-14 at 20.53.42.jpeg",
-    "WhatsApp Image 2026-09-14 at 20.53.44.jpeg",
-    "WhatsApp Image 2026-09-14 at 20.53.47.jpeg",
-    "WhatsApp Image 2026-09-14 at 20.53.48.jpeg",
-    "WhatsApp Image 2026-09-14 at 20.53.50.jpeg",
+    "gallery/photo-01.webp",
+    "gallery/photo-02.webp",
+    "gallery/photo-03.webp",
+    "gallery/photo-04.webp",
+    "gallery/photo-05.webp",
+    "gallery/photo-06.webp",
   ];
   const dots = [...gallery.querySelectorAll("[data-gallery-dot]")];
   let currentIndex = 0;
