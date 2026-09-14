@@ -367,38 +367,20 @@
     background: linear-gradient(90deg, #fff 0%, rgb(255 255 255 / 86%) 10%, rgb(255 255 255 / 28%) 30%, transparent 52%);
   }
 
-  .piano-glow {
+  .piano-keyboard {
     position: absolute;
-    top: 6%;
-    right: 22%;
-    width: 52%;
-    aspect-ratio: 1;
-    border-radius: 9999px;
-    background: rgb(255 255 255 / 68%);
-    filter: blur(12px);
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    transform-origin: right bottom;
+    filter: drop-shadow(12px 15px 0 rgb(29 35 48 / 10%));
+    transition: transform 500ms var(--ease-out-expo), filter 500ms var(--ease-out-expo);
   }
 
-  .piano-keyboard i {
-    position: relative;
-    flex: 1;
-    border-right: 1px solid #bbb7b6;
-    background: #fffdf9;
-  }
-
-  .piano-keyboard i:nth-child(2)::after,
-  .piano-keyboard i:nth-child(4)::after,
-  .piano-keyboard i:nth-child(7)::after,
-  .piano-keyboard i:nth-child(9)::after,
-  .piano-keyboard i:nth-child(11)::after {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: -34%;
-    width: 62%;
-    height: 54%;
-    border-radius: 0 0 4px 4px;
-    background: #302e38;
-    content: "";
+  article:hover .piano-keyboard {
+    transform: translate(-0.6rem, -0.45rem) rotate(2deg);
+    filter: drop-shadow(16px 19px 0 rgb(29 35 48 / 13%));
   }
 
   .sound-toggle.is-playing {
