@@ -7,73 +7,79 @@
 <meta name="description" content="Fahrendra Khoirul: software engineer building products from idea to production. Mobile, backend, AI, open source. Based in Malang, Indonesia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Lobster&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23FFFFFF' font-family='Georgia, serif' font-weight='400'%3EF%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<header class="site-header">
-  <div class="nav-inner">
-    <a href="index.html" class="wordmark">Fahrendra Khoirul</a>
-    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-    <nav class="primary-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Work</a></li>
-        <li><a href="blog.html">Writing</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<main id="main" class="bento-page">
+  <section class="bento-shell" aria-labelledby="intro-title">
+    <div class="bento-grid">
+      <article class="bento-card bento-intro bento-enter" style="--enter: 70ms">
+        <div class="intro-copy">
+          <h1 id="intro-title">I’m <span class="hero-name">Fahrendra<svg class="hero-underline" viewBox="0 0 170 30" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9C32.8203 5.34032 108.769 -0.881146 166 3.51047" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9" /></svg></span>.<span class="hero-subtitle">Engineer who likes<br>piano so much.</span></h1>
+        </div>
+        <figure class="intro-visual">
+          <img src="assets/foto_profile.jpg" alt="Hand playing piano keys">
+        </figure>
+      </article>
 
-<main id="main">
-  <section class="manifesto">
-    <div class="manifesto-line"><span>i build software</span></div>
-    <div class="manifesto-line"><span>from idea to production.</span></div>
-    <div class="manifesto-line"><span>i care about the whole system,</span></div>
-    <div class="manifesto-line"><span>not just the code.</span></div>
-    <p class="manifesto-sub">Software engineer based in Malang, Indonesia. Mobile, backend, AI, open source. Sometimes I play piano.</p>
+      <article class="bento-card bento-work bento-enter" style="--enter: 130ms">
+        <div class="github-card-head">
+          <a class="github-profile-link" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">
+            <img class="github-icon" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.svg" alt="GitHub">
+            <span><strong>@fahrendrakhoirul</strong><small>GitHub activity</small></span>
+          </a>
+          <a class="github-open-link" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener" aria-label="Open Fahrendra Khoirul on GitHub">↗</a>
+        </div>
+          <div class="github-stats-wrap">
+          <a href="https://github.com/fahrendrakhoirul" target="_blank" rel="noopener" aria-label="Open Fahrendra Khoirul GitHub streak stats">
+            <img class="github-stats-image" src="https://github-readme-streak-stats.herokuapp.com/?user=fahrendrakhoirul&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak Stats">
+          </a>
+        </div>
+        <div class="github-card-footer">
+          <h2>Keep it streak.</h2>
+        </div>
+      </article>
+
+      <a href="about.html" class="bento-card bento-note bento-enter bento-link" style="--enter: 190ms">
+        <blockquote>“Good software should know when to get out of the way.”</blockquote>
+        <span class="bento-inline-link">More about me <b>→</b></span>
+      </a>
+
+      <article class="bento-card bento-piano bento-enter" style="--enter: 250ms">
+        <div class="piano-copy">
+          <h2>I play piano<br>for the pauses.</h2>
+        </div>
+        <div class="piano-stage" aria-hidden="true">
+          <div class="piano-glow"></div>
+          <div class="piano-keyboard"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <button class="sound-toggle" type="button" aria-pressed="false"><span class="sound-icon" aria-hidden="true">♪</span><span>Play a note</span></button>
+      </article>
+
+      <a href="blog.html" class="bento-card bento-writing bento-enter bento-link" style="--enter: 310ms">
+        <div class="writing-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <h2>Notes from the work.</h2>
+        <span class="bento-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <aside class="bento-card bento-links bento-enter" style="--enter: 370ms" aria-label="Elsewhere online">
+        <div class="social-list">
+          <a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+          <a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+          <a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium <span>↗</span></a>
+        </div>
+      </aside>
+    </div>
+
+    <p class="bento-closing bento-enter" style="--enter: 430ms">Curious by default. Precise on purpose. <span>© 2026</span></p>
   </section>
-
-  <div class="shortcuts">
-    <a href="projects.html" class="shortcut-card reveal">
-      <div>
-        <span class="label">Work</span>
-        <h3>Things I've built and shipped.</h3>
-      </div>
-      <span class="arrow">View projects &rarr;</span>
-    </a>
-    <a href="blog.html" class="shortcut-card reveal">
-      <div>
-        <span class="label">Writing</span>
-        <h3>Notes on engineering and craft.</h3>
-      </div>
-      <span class="arrow">Read writing &rarr;</span>
-    </a>
-    <a href="about.html" class="shortcut-card reveal">
-      <div>
-        <span class="label">About</span>
-        <h3>The person behind the code.</h3>
-      </div>
-      <span class="arrow">More about me &rarr;</span>
-    </a>
-  </div>
 </main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span class="mono">&copy; 2026 Fahrendra Khoirul</span>
-    <ul class="footer-links">
-      <li><a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
-    </ul>
-  </div>
-</footer>
 
 <script src="main.js"></script>
 </body>

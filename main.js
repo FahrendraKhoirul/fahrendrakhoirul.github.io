@@ -14,18 +14,17 @@ function initManifesto() {
 }
 
 // ============================================
-// Mobile nav toggle
+// Home bento piano control
 // ============================================
-function initNavToggle() {
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector("nav.primary-nav");
-  if (!toggle || !nav) return;
+function initPianoTile() {
+  const toggle = document.querySelector(".sound-toggle");
+  if (!toggle) return;
+
   toggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
+    const isPlaying = toggle.classList.toggle("is-playing");
+    toggle.setAttribute("aria-pressed", String(isPlaying));
+    toggle.querySelector("span:last-child").textContent = isPlaying ? "Sounding" : "Play a note";
   });
-  nav.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => nav.classList.remove("open"))
-  );
 }
 
 // ============================================
@@ -66,19 +65,6 @@ function initStagger() {
     { threshold: 0.1 }
   );
   containers.forEach((el) => io.observe(el));
-}
-
-// ============================================
-// Active nav link
-// ============================================
-function initActiveLink() {
-  const path = location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("nav.primary-nav a").forEach((a) => {
-    const href = a.getAttribute("href");
-    if (href === path || (path === "" && href === "index.html")) {
-      a.classList.add("active");
-    }
-  });
 }
 
 // ============================================
@@ -152,10 +138,9 @@ async function loadMediumPosts() {
 // ============================================
 document.addEventListener("DOMContentLoaded", () => {
   initManifesto();
-  initNavToggle();
+  initPianoTile();
   initReveal();
   initStagger();
-  initActiveLink();
   initProjectFilter();
   loadMediumPosts();
 });
