@@ -269,7 +269,7 @@ async function loadMediumPosts() {
       row.innerHTML = `
         <span class="post-date">${dateStr}</span>
         <h3>${post.title}</h3>
-        <span class="arrow">Read &rarr;</span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
       `;
       list.appendChild(row);
     });

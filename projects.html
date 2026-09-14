@@ -7,7 +7,7 @@
 <meta name="description" content="Projects and experiments by Fahrendra Khoirul — mobile apps, open source packages, SaaS platforms, and more.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Lobster&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23FFFFFF' font-family='Georgia, serif' font-weight='400'%3EF%3C/text%3E%3C/svg%3E">
 </head>
@@ -15,25 +15,34 @@
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<main id="main">
-  <section class="mx-auto max-w-[1200px] px-5 pt-[clamp(5rem,12vw,9rem)] pb-[clamp(2rem,5vw,4rem)] sm:px-8 xl:px-12">
-    <h1 class="reveal max-w-[16ch] font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-balance">Projects &amp; experiments.</h1>
-    <p class="reveal mt-6 max-w-[48ch] text-[1.125rem] leading-7 text-ink-soft">A mix of professional work, personal projects, and open source contributions — usually born from curiosity, not just requirements.</p>
-  </section>
+<main id="main" class="page-shell">
+  <div class="page-frame">
+    <nav class="page-nav" aria-label="Breadcrumb">
+      <a href="index.html">&larr; Home</a>
+      <span>Work</span>
+    </nav>
 
-  <section class="mx-auto max-w-[1200px] px-5 py-[clamp(4rem,10vw,8rem)] sm:px-8 xl:px-12">
-    <div class="filter-row reveal">
-      <button class="filter-chip active" data-filter="all">All</button>
-      <button class="filter-chip" data-filter="work">Work</button>
-      <button class="filter-chip" data-filter="personal">Personal</button>
-      <button class="filter-chip" data-filter="opensource">Open Source</button>
-    </div>
+    <div class="page-grid">
+      <section class="page-hero bento-panel bento-enter" aria-labelledby="work-title">
+        <span class="page-eyebrow">Work / 02</span>
+        <h1 id="work-title" class="page-title">Work &amp;<br>projects.</h1>
+        <p class="page-summary">A mix of professional work, personal projects, and open source contributions — usually born from curiosity, not just requirements.</p>
+      </section>
 
-    <div class="project-list stagger">
+      <section class="content-panel bento-panel bento-enter md:col-span-12" aria-label="Project filters">
+        <span class="meta-label">Browse by kind</span>
+        <div class="filter-row mt-4">
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="work">Work</button>
+          <button class="filter-chip" data-filter="personal">Personal</button>
+          <button class="filter-chip" data-filter="opensource">Open Source</button>
+        </div>
+      </section>
+
+      <div class="project-list stagger">
       <a href="project-detail.html" class="project-card" data-tags="personal,opensource">
         <div class="project-visual">
-          <!-- TODO: whats_new_kit screenshot, 800x600 -->
-          <span class="placeholder">Screenshot</span>
+          <span class="placeholder">Release notes</span>
         </div>
         <div class="project-info">
           <span class="number">01</span>
@@ -45,14 +54,13 @@
             <span class="tag">Dart</span>
             <span class="tag">pub.dev</span>
           </div>
-          <span class="link">View project &rarr;</span>
+          <span class="link">View project <b aria-hidden="true">&rarr;</b></span>
         </div>
       </a>
 
       <a href="project-detail.html" class="project-card" data-tags="personal">
         <div class="project-visual">
-          <!-- TODO: JLPT Mini Game screenshot, 800x600 -->
-          <span class="placeholder">Screenshot</span>
+          <span class="placeholder">Japanese practice</span>
         </div>
         <div class="project-info">
           <span class="number">02</span>
@@ -63,14 +71,13 @@
             <span class="tag">Flutter</span>
             <span class="tag">Game</span>
           </div>
-          <span class="link">View project &rarr;</span>
+          <span class="link">View project <b aria-hidden="true">&rarr;</b></span>
         </div>
       </a>
 
       <a href="project-detail.html" class="project-card" data-tags="personal">
         <div class="project-visual">
-          <!-- TODO: Tadaa screenshot, 800x600 -->
-          <span class="placeholder">Screenshot</span>
+          <span class="placeholder">Daily reset</span>
         </div>
         <div class="project-info">
           <span class="number">03</span>
@@ -82,14 +89,13 @@
             <span class="tag">Riverpod</span>
             <span class="tag">Drift</span>
           </div>
-          <span class="link">View project &rarr;</span>
+          <span class="link">View project <b aria-hidden="true">&rarr;</b></span>
         </div>
       </a>
 
       <a href="project-detail.html" class="project-card" data-tags="work">
         <div class="project-visual">
-          <!-- TODO: Medicare App screenshot, 800x600 -->
-          <span class="placeholder">Screenshot</span>
+          <span class="placeholder">Connected care</span>
         </div>
         <div class="project-info">
           <span class="number">04</span>
@@ -100,14 +106,13 @@
             <span class="tag">Flutter</span>
             <span class="tag">Healthcare</span>
           </div>
-          <span class="link">View project &rarr;</span>
+          <span class="link">View project <b aria-hidden="true">&rarr;</b></span>
         </div>
       </a>
 
       <a href="project-detail.html" class="project-card" data-tags="work">
         <div class="project-visual">
-          <!-- TODO: DocLocum screenshot, 800x600 -->
-          <span class="placeholder">Screenshot</span>
+          <span class="placeholder">Care staffing</span>
         </div>
         <div class="project-info">
           <span class="number">05</span>
@@ -118,14 +123,13 @@
             <span class="tag">Flutter</span>
             <span class="tag">Healthcare</span>
           </div>
-          <span class="link">View project &rarr;</span>
+          <span class="link">View project <b aria-hidden="true">&rarr;</b></span>
         </div>
       </a>
 
       <a href="project-detail.html" class="project-card" data-tags="work">
         <div class="project-visual">
-          <!-- TODO: Tarkam.id screenshot, 800x600 -->
-          <span class="placeholder">Screenshot</span>
+          <span class="placeholder">Grassroots football</span>
         </div>
         <div class="project-info">
           <span class="number">06</span>
@@ -136,23 +140,22 @@
             <span class="tag">Web</span>
             <span class="tag">Sports</span>
           </div>
-          <span class="link">View project &rarr;</span>
+          <span class="link">View project <b aria-hidden="true">&rarr;</b></span>
         </div>
       </a>
+      </div>
     </div>
-  </section>
-</main>
 
-<footer class="border-t border-[#e5e5e5] py-8">
-  <div class="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-5 sm:px-8 xl:px-12">
-    <span class="font-mono text-[0.7rem] tracking-[0.04em] text-ink-soft uppercase">&copy; 2026 Fahrendra Khoirul</span>
-    <ul class="m-0 flex list-none gap-6 p-0">
-      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
-    </ul>
+    <footer class="page-footer">
+      <span>&copy; 2026 Fahrendra Khoirul</span>
+      <ul>
+        <li><a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
+      </ul>
+    </footer>
   </div>
-</footer>
+</main>
 
 <script src="main.js"></script>
 </body>

@@ -7,7 +7,7 @@
 <meta name="description" content="About Fahrendra Khoirul — software engineer from Malang, Indonesia. Mobile, backend, AI, open source, and piano.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Lobster&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23FFFFFF' font-family='Georgia, serif' font-weight='400'%3EF%3C/text%3E%3C/svg%3E">
 </head>
@@ -15,51 +15,66 @@
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<main id="main">
-  <section class="mx-auto max-w-[1200px] px-5 pt-[clamp(5rem,12vw,9rem)] pb-[clamp(2rem,5vw,4rem)] sm:px-8 xl:px-12">
-    <h1 class="reveal max-w-[16ch] font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-balance">What I'm about.</h1>
-  </section>
+<main id="main" class="page-shell">
+  <div class="page-frame">
+    <nav class="page-nav" aria-label="Breadcrumb">
+      <a href="index.html">&larr; Home</a>
+      <span>About</span>
+    </nav>
 
-  <div class="mx-auto max-w-[1200px] px-5 sm:px-8 xl:px-12">
-    <section class="reveal border-b border-[#e5e5e5] py-[clamp(3rem,8vw,6rem)]">
-      <span class="mb-6 block font-mono text-[0.7rem] tracking-[0.1em] text-ink-soft uppercase">Where I'm from</span>
-      <h2 class="mb-6 max-w-[20ch] font-serif text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] tracking-[-0.02em] text-balance">Malang, Indonesia.</h2>
-      <p class="max-w-[56ch] text-[1.0625rem] leading-7 text-ink-soft">I grew up in Malang — a city in East Java that's just the right size. Big enough to have a tech scene, small enough that you can still think. I started coding here, and I still live here.</p>
-    </section>
+    <div class="page-grid">
+      <section class="page-hero bento-panel bento-enter" aria-labelledby="about-title">
+        <span class="page-eyebrow">About / 01</span>
+        <h1 id="about-title" class="page-title">What I'm about.</h1>
+        <p class="page-summary">A software engineer from Malang who enjoys the full shape of a product: the messy first thought, the architecture, and the thing that finally ships.</p>
+      </section>
 
-    <section class="reveal border-b border-[#e5e5e5] py-[clamp(3rem,8vw,6rem)]">
-      <span class="mb-6 block font-mono text-[0.7rem] tracking-[0.1em] text-ink-soft uppercase">What I do</span>
-      <h2 class="mb-6 max-w-[20ch] font-serif text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] tracking-[-0.02em] text-balance">I build software from idea to production.</h2>
-      <p class="max-w-[56ch] text-[1.0625rem] leading-7 text-ink-soft">I started with Flutter and mobile development, but I can't stay in one lane. I care about understanding the whole system — why something is being built, who it's for, how the architecture works, and how it ships. I enjoy turning messy ideas into structured, working products.</p>
-      <p class="mt-5 max-w-[56ch] text-[1.0625rem] leading-7 text-ink-soft">Right now I work across mobile, backend, and AI/ML. I've built SaaS platforms, healthcare apps, open source packages, and small tools that solve my own problems. I publish on <a class="border-b border-[#e5e5e5] text-ink transition hover:border-ink" href="https://pub.dev/packages/whats_new_kit" target="_blank" rel="noopener">pub.dev</a>, write on <a class="border-b border-[#e5e5e5] text-ink transition hover:border-ink" href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a>, and push code on <a class="border-b border-[#e5e5e5] text-ink transition hover:border-ink" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a>.</p>
-    </section>
+      <article class="about-panel content-panel bento-panel bento-enter">
+        <span class="meta-label">Where I'm from</span>
+        <div>
+          <h2>Malang, Indonesia.</h2>
+          <p>I grew up in Malang — a city in East Java that's just the right size. Big enough to have a tech scene, small enough that you can still think. I started coding here, and I still live here.</p>
+        </div>
+      </article>
 
-    <section class="reveal border-b border-[#e5e5e5] py-[clamp(3rem,8vw,6rem)]">
-      <span class="mb-6 block font-mono text-[0.7rem] tracking-[0.1em] text-ink-soft uppercase">How I think</span>
-      <h2 class="mb-6 max-w-[20ch] font-serif text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] tracking-[-0.02em] text-balance">Simple, thoughtful, well-designed.</h2>
-      <p class="max-w-[56ch] text-[1.0625rem] leading-7 text-ink-soft">I believe good systems are simple, make sense, and are well-designed — not complicated because of "best practices" without reason. I care about clean architecture, good UX, and understanding the full picture rather than just writing code.</p>
-      <p class="mt-5 max-w-[56ch] text-[1.0625rem] leading-7 text-ink-soft">I also play piano. Not classical — just piano. There's something about the way music requires both structure and feel that maps directly to how I think about software. Architecture is the score. Every line of code is a note. Clean code is harmony.</p>
-    </section>
+      <article class="about-panel content-panel bento-panel bento-enter">
+        <span class="meta-label">What I do</span>
+        <div>
+          <h2>I build software from idea to production.</h2>
+          <p>I started with Flutter and mobile development, but I can't stay in one lane. I care about understanding the whole system — why something is being built, who it's for, how the architecture works, and how it ships.</p>
+          <p>Right now I work across mobile, backend, and AI/ML. I publish on <a href="https://pub.dev/packages/whats_new_kit" target="_blank" rel="noopener">pub.dev</a>, write on <a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a>, and push code on <a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+      </article>
 
-    <section class="reveal py-[clamp(3rem,8vw,6rem)]">
-      <span class="mb-6 block font-mono text-[0.7rem] tracking-[0.1em] text-ink-soft uppercase">What I'm looking for</span>
-      <h2 class="mb-6 max-w-[20ch] font-serif text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] tracking-[-0.02em] text-balance">Interesting problems with good people.</h2>
-      <p class="max-w-[56ch] text-[1.0625rem] leading-7 text-ink-soft">I want to work on things that matter — products that solve real problems, with teams that care about craft. I'm not interested in technology for technology's sake. I'm interested in building things that work well and make sense.</p>
-      <p class="mt-5 max-w-[56ch] text-[1.0625rem] leading-7 text-ink-soft">If that sounds like your kind of project, <a class="border-b border-[#e5e5e5] text-ink transition hover:border-ink" href="mailto:fahrendra.khoirul@gmail.com">get in touch</a>.</p>
-    </section>
+      <article class="about-panel content-panel bento-panel bento-enter">
+        <span class="meta-label">How I think</span>
+        <div>
+          <h2>Simple, thoughtful, well-designed.</h2>
+          <p>I believe good systems are simple, make sense, and are well-designed — not complicated because of "best practices" without reason. I care about clean architecture, good UX, and understanding the full picture.</p>
+          <p>I also play piano. Architecture is the score. Every line of code is a note. Clean code is harmony.</p>
+        </div>
+      </article>
+
+      <article class="about-panel content-panel bento-panel bento-enter">
+        <span class="meta-label">What I'm looking for</span>
+        <div>
+          <h2>Interesting problems with good people.</h2>
+          <p>I want to work on things that matter — products that solve real problems, with teams that care about craft. I'm interested in building things that work well and make sense.</p>
+          <a class="bento-action" href="mailto:fahrendra.khoirul@gmail.com">Get in touch <b aria-hidden="true">&rarr;</b></a>
+        </div>
+      </article>
+    </div>
+
+    <footer class="page-footer">
+      <span>&copy; 2026 Fahrendra Khoirul</span>
+      <ul>
+        <li><a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
+      </ul>
+    </footer>
   </div>
 </main>
-
-<footer class="border-t border-[#e5e5e5] py-8">
-  <div class="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-5 sm:px-8 xl:px-12">
-    <span class="font-mono text-[0.7rem] tracking-[0.04em] text-ink-soft uppercase">&copy; 2026 Fahrendra Khoirul</span>
-    <ul class="m-0 flex list-none gap-6 p-0">
-      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
-    </ul>
-  </div>
-</footer>
 
 <script src="main.js"></script>
 </body>
