@@ -1,6 +1,6 @@
 # FahrendraKhoirul.github.io
 
-This repository hosts the source for the personal website and portfolio for Fahrendra Khoirul. The site is a GitHub Pages site and is built using standard web technologies (HTML, CSS, and JavaScript).
+This repository hosts the source for the personal website and portfolio for Fahrendra Khoirul. The site is a GitHub Pages site built with static HTML, JavaScript, and a Tailwind CSS build step.
 
 ## About
 
@@ -21,7 +21,14 @@ This repository is primarily composed of:
 
    git clone https://github.com/FahrendraKhoirul/fahrendrakhoirul.github.io.git
 
-2. Open the site locally by opening `index.html` in a browser, or run a simple local server for a better experience:
+2. Install the Tailwind CLI dependency and build the deployable stylesheet:
+
+  ```bash
+  npm install
+  npm run build
+  ```
+
+3. Open the site locally by opening `index.html` in a browser, or run a simple local server for a better experience:
 
    - Python 3:
      ```bash
@@ -48,7 +55,21 @@ If you'd like to report an issue or request a feature, open an issue in this rep
 
 ## Deployment
 
-This repository is intended to be served by GitHub Pages. Pushing changes to the repository's default branch will update the live site according to the repository's Pages settings.
+This repository is intended to be served by GitHub Pages. The generated stylesheet at `assets/css/site.css` is committed to the repository, so GitHub Pages only needs to serve the static files.
+
+Before pushing a styling change, run:
+
+```bash
+npm run build
+```
+
+For local Tailwind development, use:
+
+```bash
+npm run dev
+```
+
+Pushing the built files to the repository's default branch will update the live site according to the repository's Pages settings.
 
 ## Contact
 

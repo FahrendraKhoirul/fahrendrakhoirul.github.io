@@ -8,79 +8,102 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Lobster&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23FFFFFF' font-family='Georgia, serif' font-weight='400'%3EF%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<main id="main" class="bento-page">
-  <section class="bento-shell" aria-labelledby="intro-title">
-    <div class="bento-grid">
-      <article class="bento-card bento-intro bento-enter" style="--enter: 70ms">
-        <div class="intro-copy">
-          <h1 id="intro-title">I’m <span class="hero-name">Fahrendra<svg class="hero-underline" viewBox="0 0 170 30" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9C32.8203 5.34032 108.769 -0.881146 166 3.51047" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9" /></svg></span>.<span class="hero-subtitle">Engineer who likes<br>piano so much.</span></h1>
+<main id="main" class="min-h-[100dvh] bg-page px-3 pt-10 pb-4 text-ink [background-image:linear-gradient(90deg,rgb(29_35_48_/_2.5%)_1px,transparent_1px),linear-gradient(rgb(29_35_48_/_2.5%)_1px,transparent_1px)] [background-size:28px_28px] sm:px-5 sm:pt-14 sm:pb-6 xl:px-8 xl:pt-20 xl:pb-8">
+  <section class="mx-auto max-w-[1024px]" aria-labelledby="intro-title">
+    <div class="grid grid-cols-1 gap-3.5 md:grid-cols-12 md:gap-4 xl:gap-[1.15rem]">
+      <article class="intro-card bento-enter relative col-span-1 min-h-[300px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-white shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] md:col-span-7 md:min-h-[clamp(300px,32vw,400px)] md:rounded-[22px]" style="--enter: 70ms">
+        <div class="relative z-10 flex h-full w-[62%] items-center p-6 sm:p-9 xl:p-[2.7rem]">
+          <h1 id="intro-title" class="relative z-10 max-w-[9.5ch] text-[clamp(2rem,3.7vw,3.55rem)] leading-[0.99] font-semibold text-balance">I’m <span class="relative inline-block whitespace-nowrap font-script text-[1.12em] leading-[0.82] font-normal">Fahrendra<svg class="pointer-events-none absolute top-full left-0 mt-[0.12em] h-[0.34em] w-full text-brand" viewBox="0 0 170 30" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9C32.8203 5.34032 108.769 -0.881146 166 3.51047" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9" /></svg></span>.<span class="mt-[0.65em] block text-[0.48em] leading-[1.08] font-medium text-ink-soft">Engineer who likes<br>piano so much.</span></h1>
         </div>
-        <figure class="intro-visual">
-          <img src="assets/foto_profile.jpg" alt="Hand playing piano keys">
+        <figure class="intro-visual absolute inset-y-0 right-0 m-0 w-[54%] overflow-hidden bg-[#d7b8a4] before:absolute before:inset-y-0 before:left-0 before:z-[1] before:w-14 before:bg-gradient-to-r before:from-white before:to-transparent">
+          <img class="intro-card-image h-full w-full object-cover object-left saturate-90 transition-transform duration-700 ease-out" src="assets/foto_profile.jpg" alt="Hand playing piano keys">
         </figure>
       </article>
 
-      <article class="bento-card bento-work bento-enter" style="--enter: 130ms">
-        <div class="github-card-head">
-          <a class="github-profile-link" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">
-            <img class="github-icon" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.svg" alt="GitHub">
-            <span><strong>@fahrendrakhoirul</strong><small>GitHub activity</small></span>
+      <article class="bento-enter group relative col-span-1 flex min-h-[370px] min-w-0 flex-col justify-between overflow-hidden rounded-[18px] border border-line bg-ink p-5 text-white shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] sm:p-8 md:col-span-5 md:min-h-[clamp(300px,32vw,400px)] md:rounded-[22px]" style="--enter: 130ms">
+        <div class="relative z-10 flex items-start justify-between gap-4">
+          <a class="inline-flex items-center gap-3 text-white" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">
+            <img class="block size-[31px] object-contain" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.svg" alt="GitHub">
+            <span><strong>@fahrendrakhoirul</strong></span>
           </a>
-          <a class="github-open-link" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener" aria-label="Open Fahrendra Khoirul on GitHub">↗</a>
+          <a class="grid size-8 place-items-center rounded-full bg-white/15 text-base text-white transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-brand focus-visible:outline-3 focus-visible:outline-white focus-visible:outline-offset-3" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener" aria-label="Open Fahrendra Khoirul on GitHub">↗</a>
         </div>
-          <div class="github-stats-wrap">
-          <a href="https://github.com/fahrendrakhoirul" target="_blank" rel="noopener" aria-label="Open Fahrendra Khoirul GitHub streak stats">
-            <img class="github-stats-image" src="https://github-readme-streak-stats.herokuapp.com/?user=fahrendrakhoirul&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak Stats">
+        <div class="relative z-10 my-4 flex min-h-[125px] w-full items-center justify-center md:my-5 md:min-h-[145px]">
+          <a class="block w-full" href="https://github.com/fahrendrakhoirul" target="_blank" rel="noopener" aria-label="Open Fahrendra Khoirul GitHub streak stats">
+            <img class="block w-full transition group-hover:-translate-y-0.5 group-hover:brightness-110" src="https://github-readme-streak-stats.herokuapp.com/?user=fahrendrakhoirul&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak Stats">
           </a>
         </div>
-        <div class="github-card-footer">
-          <h2>Keep it streak.</h2>
+        <div class="relative z-10">
+          <h2 class="text-[clamp(1.5rem,2.4vw,2.35rem)] leading-[1.04] font-medium">Code on streak.</h2>
         </div>
       </article>
 
-      <a href="about.html" class="bento-card bento-note bento-enter bento-link" style="--enter: 190ms">
-        <blockquote>“Good software should know when to get out of the way.”</blockquote>
-        <span class="bento-inline-link">More about me <b>→</b></span>
+      <a href="projects.html" class="work-projects-card bento-enter group relative col-span-1 grid min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-mint p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:p-8 md:col-span-4 md:min-h-[220px] md:grid-cols-[minmax(0,1fr)_minmax(130px,0.8fr)] md:p-6 md:rounded-[22px]" style="--enter: 190ms">
+        <div class="work-projects-copy relative z-10 flex flex-col justify-between">
+          
+          <h2 class="mt-7 max-w-[8ch] text-[clamp(1.6rem,2.5vw,2.4rem)] leading-[1.02] font-medium">Work &amp;<br>projects.</h2>
+          <span class="mt-6 inline-flex items-center gap-2 text-[0.76rem] font-semibold">See selected work <b class="grid size-7 place-items-center rounded-full bg-white text-base text-brand transition duration-300 group-hover:translate-x-1 group-hover:bg-brand group-hover:text-white">→</b></span>
+        </div>
+        <div class="work-projects-laptop pointer-events-none absolute right-[-8%] bottom-[-5%] w-[50%] md:right-[-9%] md:bottom-[-5%] md:w-[50%]" aria-hidden="true">
+          <img class="block h-auto w-full drop-shadow-[0_18px_16px_rgb(29_35_48_/_20%)]" src="assets/macbook.svg" alt="MacBook showing a project workspace">
+        </div>
       </a>
 
-      <article class="bento-card bento-piano bento-enter" style="--enter: 250ms">
-        <div class="piano-copy">
-          <h2>I play piano<br>for the pauses.</h2>
+      <article class="bento-enter relative col-span-1 min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-pink p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] sm:p-8 md:col-span-5 md:min-h-[220px] md:p-6 md:rounded-[22px]" style="--enter: 250ms">
+        <div class="relative z-10">
+          <h2 class="mt-3.5 max-w-[9ch] text-[clamp(1.5rem,2.4vw,2.35rem)] leading-[1.04] font-medium">I play piano<br>for the pauses.</h2>
         </div>
-        <div class="piano-stage" aria-hidden="true">
+        <div class="absolute right-[-4%] bottom-[8%] h-[60%] w-[61%] rotate-[-5deg]" aria-hidden="true">
           <div class="piano-glow"></div>
-          <div class="piano-keyboard"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="piano-keyboard absolute right-0 bottom-0 flex h-[57%] w-full overflow-hidden rounded-[11px] border-[6px] border-[#33313b] bg-[#33313b] px-[7px] py-1 shadow-[14px_16px_0_rgb(29_35_48_/_12%)]"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
-        <button class="sound-toggle" type="button" aria-pressed="false"><span class="sound-icon" aria-hidden="true">♪</span><span>Play a note</span></button>
+        <button class="sound-toggle absolute bottom-4 left-4 z-10 inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white/70 px-3 py-2 text-[0.68rem] font-medium text-ink transition hover:bg-white active:scale-[0.97] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:bottom-7 sm:left-7 md:bottom-6 md:left-6" type="button" aria-pressed="false"><span class="sound-icon" aria-hidden="true">♪</span><span>Play a note</span></button>
       </article>
 
-      <a href="blog.html" class="bento-card bento-writing bento-enter bento-link" style="--enter: 310ms">
-        <div class="writing-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <h2>Notes from the work.</h2>
-        <span class="bento-arrow" aria-hidden="true">↗</span>
+      <a href="blog.html" class="bento-enter group relative col-span-1 flex min-h-[240px] min-w-0 flex-col justify-between overflow-hidden rounded-[18px] border border-line bg-sun p-6 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] focus-visible:outline-3 focus-visible:outline-brand focus-visible:outline-offset-3 sm:p-8 md:col-span-3 md:min-h-[220px] md:p-6 md:rounded-[22px]" style="--enter: 310ms">
+        <div class="relative z-10">
+          <h2 class="max-w-full text-[clamp(1.6rem,2.5vw,2.4rem)] leading-[1.02] font-medium">Notes &amp; ideas.</h2>
+        </div>
+        <span class="relative z-10 inline-flex self-start items-center gap-2 text-[0.76rem] font-semibold">Read notes <b class="grid size-7 place-items-center rounded-full bg-white text-base text-brand transition duration-300 group-hover:translate-x-1 group-hover:bg-brand group-hover:text-white">→</b></span>
+        <img class="pointer-events-none absolute right-[-9%] bottom-[-45%] w-[48%] rotate-[10deg] drop-shadow-[0_18px_16px_rgb(29_35_48_/_22%)] transition duration-500 ease-out group-hover:-translate-x-[3rem] group-hover:-translate-y-[2.5rem] group-hover:scale-[0.88] group-hover:rotate-[5deg] md:right-[-11%] md:bottom-[-48%] md:w-[52%]" src="assets/notebook.svg" alt="Notebook with a bookmark">
       </a>
 
-      <aside class="bento-card bento-links bento-enter" style="--enter: 370ms" aria-label="Elsewhere online">
-        <div class="social-list">
-          <a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub <span>↗</span></a>
-          <a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
-          <a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium <span>↗</span></a>
+      <aside class="bento-enter col-span-1 grid min-h-[240px] min-w-0 overflow-hidden rounded-[18px] border border-line bg-brand p-6 text-white shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] sm:p-8 md:col-span-12 md:min-h-[138px] md:rounded-[22px]" style="--enter: 370ms" aria-label="Elsewhere online">
+        <div class="grid grid-cols-1 gap-0 md:grid-cols-3 md:gap-3">
+          <a class="flex items-center justify-between border-b border-white/25 py-3 text-[clamp(0.88rem,1.2vw,1rem)] font-medium transition hover:translate-x-1 hover:border-white" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+          <a class="flex items-center justify-between border-b border-white/25 py-3 text-[clamp(0.88rem,1.2vw,1rem)] font-medium transition hover:translate-x-1 hover:border-white" href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+          <a class="flex items-center justify-between border-b border-white/25 py-3 text-[clamp(0.88rem,1.2vw,1rem)] font-medium transition hover:translate-x-1 hover:border-white" href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium <span>↗</span></a>
         </div>
       </aside>
     </div>
 
-    <p class="bento-closing bento-enter" style="--enter: 430ms">Curious by default. Precise on purpose. <span>© 2026</span></p>
+    <section class="mt-4 md:mt-5" aria-labelledby="now-playing-title">
+      <div class="bento-enter rounded-[18px] border border-line bg-white p-4 shadow-[0_14px_32px_rgb(38_46_59_/_3.5%),0_2px_5px_rgb(38_46_59_/_2.5%)] sm:p-5 md:rounded-[22px] md:p-6" style="--enter: 490ms">
+        <div class="mb-4 flex items-center justify-between gap-4 px-1">
+          <h2 id="now-playing-title" class="text-[clamp(1.15rem,1.6vw,1.4rem)] font-medium">Now playing</h2>
+          <span class="inline-flex items-center gap-2 text-[0.68rem] font-medium tracking-[0.02em] text-ink-soft">
+            <span class="relative flex size-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60"></span>
+              <span class="relative inline-flex size-2 rounded-full bg-brand"></span>
+            </span>
+            Spotify
+          </span>
+        </div>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6EsC8I5BW4fl9lvkmxyyiE?utm_source=generator&si=1a8d79e8ac2b4855" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <p class="bento-enter flex justify-between px-1 pt-4 text-[0.69rem] leading-[1.35] tracking-[0.015em] text-ink-soft sm:pt-6" style="--enter: 430ms">Curious by default. Precise on purpose. <span class="font-mono text-[0.62rem]">© 2026</span></p>
   </section>
 </main>
 
-<script src="main.js"></script>
+<script src="main.js?v=20260914"></script>
 </body>
 </html>

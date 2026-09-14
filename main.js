@@ -28,6 +28,35 @@ function initPianoTile() {
 }
 
 // ============================================
+// Home work and projects tile
+// ============================================
+function initWorkProjectsTile() {
+  const tile = document.querySelector(".work-projects-card");
+  if (!tile) return;
+
+  const copy = tile.querySelector(".work-projects-copy");
+  const laptop = tile.querySelector(".work-projects-laptop");
+
+  const setActive = (isActive) => {
+    tile.classList.toggle("is-hovered", isActive);
+
+    if (copy) {
+      copy.style.opacity = isActive ? "0.85" : "";
+      copy.style.transform = isActive ? "scale(0.9)" : "";
+    }
+
+    if (laptop) {
+      laptop.style.transform = isActive ? "translate(0, -2.25rem) rotate(-4deg) scale(1.18)" : "";
+    }
+  };
+
+  tile.addEventListener("pointerenter", () => setActive(true));
+  tile.addEventListener("pointerleave", () => setActive(false));
+  tile.addEventListener("focusin", () => setActive(true));
+  tile.addEventListener("focusout", () => setActive(false));
+}
+
+// ============================================
 // Reveal-on-scroll (generic)
 // ============================================
 function initReveal() {
@@ -139,6 +168,7 @@ async function loadMediumPosts() {
 document.addEventListener("DOMContentLoaded", () => {
   initManifesto();
   initPianoTile();
+  initWorkProjectsTile();
   initReveal();
   initStagger();
   initProjectFilter();

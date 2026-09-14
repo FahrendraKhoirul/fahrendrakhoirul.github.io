@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23FFFFFF' font-family='Georgia, serif' font-weight='400'%3EF%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -16,64 +16,64 @@
 <a href="#main" class="skip-link">Skip to content</a>
 
 <main id="main">
-  <div class="wrap">
-    <a href="projects.html" class="back-link">&larr; All projects</a>
+  <div class="mx-auto max-w-[1200px] px-5 sm:px-8 xl:px-12">
+    <a href="projects.html" class="mb-8 inline-flex items-center gap-1.5 pt-8 text-[0.8125rem] text-ink-soft transition hover:text-ink">&larr; All projects</a>
 
-    <section class="project-hero">
-      <span class="number">01</span>
-      <h1>Project Name</h1>
-      <p class="subtitle">One-line description of the project — what it does, who it's for, why it exists.</p>
+    <section class="pt-[clamp(3rem,8vw,6rem)] pb-[clamp(2rem,5vw,3rem)]">
+      <span class="mb-4 block font-mono text-[0.7rem] tracking-[0.05em] text-ink-soft">01</span>
+      <h1 class="max-w-[18ch] font-serif text-[clamp(2.5rem,6vw,4rem)] leading-[1.05] tracking-[-0.02em] text-balance">Project Name</h1>
+      <p class="mt-4 max-w-[48ch] text-[1.125rem] leading-7 text-ink-soft">One-line description of the project — what it does, who it's for, why it exists.</p>
 
-      <div class="meta-row">
-        <div class="meta-item">
-          <span class="meta-label">Role</span>
-          <span class="meta-value">Design &amp; Development</span>
+      <div class="mt-8 flex flex-wrap gap-8">
+        <div class="flex flex-col gap-1">
+          <span class="font-mono text-[0.65rem] tracking-[0.06em] text-ink-soft uppercase">Role</span>
+          <span class="text-[0.875rem] text-ink">Design &amp; Development</span>
         </div>
-        <div class="meta-item">
-          <span class="meta-label">Year</span>
-          <span class="meta-value">2025</span>
+        <div class="flex flex-col gap-1">
+          <span class="font-mono text-[0.65rem] tracking-[0.06em] text-ink-soft uppercase">Year</span>
+          <span class="text-[0.875rem] text-ink">2025</span>
         </div>
-        <div class="meta-item">
-          <span class="meta-label">Stack</span>
-          <span class="meta-value">Flutter, Riverpod, Drift</span>
+        <div class="flex flex-col gap-1">
+          <span class="font-mono text-[0.65rem] tracking-[0.06em] text-ink-soft uppercase">Stack</span>
+          <span class="text-[0.875rem] text-ink">Flutter, Riverpod, Drift</span>
         </div>
-        <div class="meta-item">
-          <span class="meta-label">Link</span>
-          <span class="meta-value"><a href="#" target="_blank" rel="noopener">View live &rarr;</a></span>
+        <div class="flex flex-col gap-1">
+          <span class="font-mono text-[0.65rem] tracking-[0.06em] text-ink-soft uppercase">Link</span>
+          <span class="text-[0.875rem] text-ink"><a href="#" target="_blank" rel="noopener">View live &rarr;</a></span>
         </div>
       </div>
     </section>
 
-    <div class="project-hero-image">
+    <div class="my-[clamp(2rem,5vw,4rem)] aspect-video overflow-hidden border border-[#e5e5e5] bg-white">
       <!-- TODO: Replace with actual project screenshot, 1600x900 -->
-      <img src="https://picsum.photos/seed/project-hero/1600/900" alt="Project screenshot">
+      <img class="size-full object-cover" src="https://picsum.photos/seed/project-hero/1600/900" alt="Project screenshot">
     </div>
 
-    <div class="project-body">
-      <h2>Overview</h2>
-      <p>Describe the project here. What problem does it solve? Who is it for? What was your role? Keep it concise but specific — avoid generic descriptions.</p>
+    <div class="max-w-[65ch] pb-[clamp(4rem,8vw,6rem)]">
+      <h2 class="mb-4 font-serif text-[clamp(1.5rem,3vw,2rem)] leading-[1.05] tracking-[-0.02em]">Overview</h2>
+      <p class="mb-6 text-[1.0625rem] leading-7 text-ink-soft">Describe the project here. What problem does it solve? Who is it for? What was your role? Keep it concise but specific — avoid generic descriptions.</p>
 
-      <h2>Technical Details</h2>
-      <p>Architecture decisions, interesting challenges, trade-offs you made. This is where you show how you think, not just what you built.</p>
-      <ul>
+      <h2 class="mt-12 mb-4 font-serif text-[clamp(1.5rem,3vw,2rem)] leading-[1.05] tracking-[-0.02em]">Technical Details</h2>
+      <p class="mb-6 text-[1.0625rem] leading-7 text-ink-soft">Architecture decisions, interesting challenges, trade-offs you made. This is where you show how you think, not just what you built.</p>
+      <ul class="list-disc pl-5 leading-7 text-ink-soft">
         <li>Key decision or technology choice</li>
         <li>Another interesting detail</li>
         <li>Something you'd do differently</li>
       </ul>
 
-      <h2>Outcome</h2>
-      <p>What happened after launch? What did you learn? What would you do differently next time?</p>
+      <h2 class="mt-12 mb-4 font-serif text-[clamp(1.5rem,3vw,2rem)] leading-[1.05] tracking-[-0.02em]">Outcome</h2>
+      <p class="mb-6 text-[1.0625rem] leading-7 text-ink-soft">What happened after launch? What did you learn? What would you do differently next time?</p>
     </div>
   </div>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span class="mono">&copy; 2026 Fahrendra Khoirul</span>
-    <ul class="footer-links">
-      <li><a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
+<footer class="border-t border-[#e5e5e5] py-8">
+  <div class="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-4 px-5 sm:px-8 xl:px-12">
+    <span class="font-mono text-[0.7rem] tracking-[0.04em] text-ink-soft uppercase">&copy; 2026 Fahrendra Khoirul</span>
+    <ul class="m-0 flex list-none gap-6 p-0">
+      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a class="text-[0.8125rem] text-ink-soft transition hover:text-ink" href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
     </ul>
   </div>
 </footer>
