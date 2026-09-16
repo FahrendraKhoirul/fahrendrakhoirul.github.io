@@ -174,6 +174,72 @@ function initWorkProjectsTile() {
 }
 
 // ============================================
+// Projects hero Devicon marquee
+// ============================================
+function initProjectsMarquee() {
+  const marquee = document.querySelector("[data-project-marquee]");
+  const tracks = marquee?.querySelectorAll("[data-marquee-track]");
+  const items = window.projectsMarqueeItems;
+  if (!marquee || !tracks?.length || !Array.isArray(items) || !items.length) return;
+
+  const createItem = (item) => {
+    const element = document.createElement("span");
+    element.className = "page-hero-marquee-item";
+    element.dataset.initial = item.name.charAt(0).toUpperCase();
+
+    const icon = document.createElement("img");
+    icon.className = "page-hero-marquee-icon";
+    icon.src = item.icon;
+    icon.alt = "";
+    icon.addEventListener("error", () => {
+      element.classList.add("is-icon-missing");
+      icon.remove();
+    });
+
+    const name = document.createElement("span");
+    name.textContent = item.name;
+
+    element.append(icon, name);
+    return element;
+  };
+
+  tracks.forEach((track) => {
+    const fragment = document.createDocumentFragment();
+    for (let copy = 0; copy < 2; copy += 1) {
+      items.forEach((item) => fragment.appendChild(createItem(item)));
+    }
+    track.replaceChildren(fragment);
+  });
+}
+
+// ============================================
+// Blog hero writing scratch marquee
+// ============================================
+function initWritingMarquee() {
+  const marquee = document.querySelector("[data-writing-marquee]");
+  const tracks = marquee?.querySelectorAll("[data-scribble-track]");
+  const lines = window.writingMarqueeLines;
+  if (!marquee || !tracks?.length || !Array.isArray(lines) || !lines.length) return;
+
+  const createLine = (line) => {
+    const element = document.createElement("span");
+    element.className = "page-hero-scribble";
+    element.dataset.color = line.color;
+    element.style.setProperty("--scribble-rotation", line.rotation);
+    element.textContent = line.text;
+    return element;
+  };
+
+  tracks.forEach((track) => {
+    const fragment = document.createDocumentFragment();
+    for (let copy = 0; copy < 2; copy += 1) {
+      lines.forEach((line) => fragment.appendChild(createLine(line)));
+    }
+    track.replaceChildren(fragment);
+  });
+}
+
+// ============================================
 // Reveal-on-scroll (generic)
 // ============================================
 function initReveal() {
@@ -235,51 +301,6 @@ function initProjectFilter() {
 }
 
 // ============================================
-// Medium RSS embed (blog.html)
-// ============================================
-const MEDIUM_USERNAME = "fahrendra.khoirul";
-
-async function loadMediumPosts() {
-  const list = document.querySelector(".post-list");
-  if (!list) return;
-
-  const feedUrl = `https://medium.com/feed/@${MEDIUM_USERNAME}`;
-  const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
-
-  list.innerHTML = `<p class="state-msg">// loading posts…</p>`;
-
-  try {
-    const res = await fetch(apiUrl);
-    const data = await res.json();
-    if (data.status !== "ok" || !data.items?.length) throw new Error("empty feed");
-
-    list.innerHTML = "";
-    data.items.slice(0, 12).forEach((post) => {
-      const date = new Date(post.pubDate);
-      const dateStr = date.toLocaleDateString("en-US", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      });
-      const row = document.createElement("a");
-      row.href = post.link;
-      row.target = "_blank";
-      row.rel = "noopener noreferrer";
-      row.className = "post-row reveal";
-      row.innerHTML = `
-        <span class="post-date">${dateStr}</span>
-        <h3>${post.title}</h3>
-        <span class="arrow" aria-hidden="true">&rarr;</span>
-      `;
-      list.appendChild(row);
-    });
-    initReveal();
-  } catch (err) {
-    list.innerHTML = `<p class="state-msg">// couldn't load Medium feed — <a href="https://medium.com/@${MEDIUM_USERNAME}" target="_blank" rel="noopener">read on Medium &nearr;</a></p>`;
-  }
-}
-
-// ============================================
 // Init
 // ============================================
 document.addEventListener("DOMContentLoaded", () => {
@@ -288,8 +309,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryTile();
   initProfileNotes();
   initWorkProjectsTile();
+  initProjectsMarquee();
+  initWritingMarquee();
   initReveal();
   initStagger();
   initProjectFilter();
-  loadMediumPosts();
 });

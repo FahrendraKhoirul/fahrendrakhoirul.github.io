@@ -17,16 +17,29 @@
 
 <main id="main" class="page-shell">
   <div class="page-frame">
-    <nav class="page-nav" aria-label="Breadcrumb">
-      <a href="index.html">&larr; Home</a>
-      <span>Work</span>
+    <nav class="page-nav page-nav-projects" aria-label="Page navigation">
+      <a class="page-nav-home" href="index.html" aria-label="Fahrendra Khoirul home">
+        <span class="page-nav-monogram" aria-hidden="true">F</span>
+        <span class="page-nav-home-label">Fahrendra</span>
+      </a>
     </nav>
 
     <div class="page-grid">
-      <section class="page-hero bento-panel bento-enter" aria-labelledby="work-title">
-        <span class="page-eyebrow">Work / 02</span>
-        <h1 id="work-title" class="page-title">Work &amp;<br>projects.</h1>
-        <p class="page-summary">A mix of professional work, personal projects, and open source contributions — usually born from curiosity, not just requirements.</p>
+      <section class="page-hero page-hero-projects bento-panel bento-enter" aria-labelledby="work-title">
+        <div class="page-hero-copy">
+          <h1 id="work-title" class="page-title">Work &amp;<br>projects.</h1>
+        </div>
+        <div class="page-hero-marquee" data-project-marquee aria-hidden="true">
+          <div class="page-hero-marquee-row">
+            <div class="page-hero-marquee-track" data-marquee-track></div>
+          </div>
+          <div class="page-hero-marquee-row page-hero-marquee-row-reverse">
+            <div class="page-hero-marquee-track" data-marquee-track></div>
+          </div>
+        </div>
+        <div class="page-hero-laptop" aria-hidden="true">
+          <img src="assets/macbook.svg" alt="">
+        </div>
       </section>
 
       <section class="content-panel bento-panel bento-enter md:col-span-12" aria-label="Project filters">
@@ -157,6 +170,7 @@
   </div>
 </main>
 
+<script src="assets/data/marquee.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

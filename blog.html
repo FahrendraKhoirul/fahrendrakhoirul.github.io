@@ -23,16 +23,21 @@
     </nav>
 
     <div class="page-grid">
-      <section class="page-hero bento-panel bento-enter" aria-labelledby="writing-title">
-        <span class="page-eyebrow">Writing / 03</span>
-        <h1 id="writing-title" class="page-title">Yes, <span class="font-script font-normal">yapping</span>.</h1>
-        <p class="page-summary">Writing about software engineering, product building, and the craft of making things work. Full articles live on Medium.</p>
-      </section>
-
-      <section class="content-panel bento-panel bento-enter bg-sun md:col-span-12" aria-label="Writing archive">
-        <span class="meta-label">From the archive</span>
-        <h2 class="mt-4">Notes from making things work.</h2>
-        <p>Recent writing appears here as it is published. Pick an entry to read it in full.</p>
+      <section class="page-hero page-hero-writing bento-panel bento-enter" aria-labelledby="writing-title">
+        <div class="page-hero-copy">
+          <h1 id="writing-title" class="page-title">Yes, <span class="writing-title-second-line">yapping.</span></h1>
+        </div>
+        <div class="page-hero-scribbles" data-writing-marquee aria-hidden="true">
+          <div class="page-hero-scribble-row">
+            <div class="page-hero-scribble-track" data-scribble-track></div>
+          </div>
+          <div class="page-hero-scribble-row page-hero-scribble-row-reverse">
+            <div class="page-hero-scribble-track" data-scribble-track></div>
+          </div>
+        </div>
+        <div class="page-hero-notebook" aria-hidden="true">
+          <img src="assets/notebook.svg" alt="">
+        </div>
       </section>
 
       <div class="post-list stagger">
@@ -51,6 +56,8 @@
   </div>
 </main>
 
+<script src="assets/data/writing-marquee.js"></script>
 <script src="main.js"></script>
+<script src="assets/js/medium-feed.js"></script>
 </body>
 </html>
