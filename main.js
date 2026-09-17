@@ -252,6 +252,7 @@ function initBlogShareCard() {
   let isPressed = false;
   let isPointerOver = false;
   let isFocused = false;
+  let suppressTransientState = false;
 
   const setActive = (isActive) => {
     card.classList.toggle("is-active", isActive);
@@ -265,26 +266,31 @@ function initBlogShareCard() {
     hoverState.style.transform = isActive ? "translateY(0)" : "translateY(0.35rem)";
   };
 
-  const render = () => setActive(isPressed || isPointerOver || isFocused);
+  const render = () => setActive(isPressed || (!suppressTransientState && (isPointerOver || isFocused)));
 
   trigger.addEventListener("click", () => {
     isPressed = !isPressed;
+    suppressTransientState = !isPressed;
     render();
   });
   trigger.addEventListener("pointerenter", () => {
     isPointerOver = true;
+    suppressTransientState = false;
     render();
   });
   trigger.addEventListener("pointerleave", () => {
     isPointerOver = false;
+    suppressTransientState = false;
     render();
   });
   trigger.addEventListener("focusin", () => {
     isFocused = true;
+    suppressTransientState = false;
     render();
   });
   trigger.addEventListener("focusout", () => {
     isFocused = false;
+    suppressTransientState = false;
     render();
   });
 
