@@ -240,6 +240,58 @@ function initWritingMarquee() {
 }
 
 // ============================================
+// Blog writing prompt paper stack
+// ============================================
+function initBlogShareCard() {
+  const card = document.querySelector("[data-share-card]");
+  const trigger = card?.querySelector(".blog-share-trigger");
+  const defaultState = card?.querySelector(".blog-share-suffix-state-default");
+  const hoverState = card?.querySelector(".blog-share-suffix-state-hover");
+  if (!card || !trigger || !defaultState || !hoverState) return;
+
+  let isPressed = false;
+  let isPointerOver = false;
+  let isFocused = false;
+
+  const setActive = (isActive) => {
+    card.classList.toggle("is-active", isActive);
+    trigger.setAttribute("aria-pressed", String(isActive));
+    trigger.setAttribute("aria-label", isActive ? "Share a writing approach about anything" : "Share a writing approach");
+    defaultState.setAttribute("aria-hidden", String(isActive));
+    hoverState.setAttribute("aria-hidden", String(!isActive));
+    defaultState.style.opacity = isActive ? "0" : "1";
+    defaultState.style.transform = isActive ? "translateY(-0.35rem)" : "translateY(0)";
+    hoverState.style.opacity = isActive ? "1" : "0";
+    hoverState.style.transform = isActive ? "translateY(0)" : "translateY(0.35rem)";
+  };
+
+  const render = () => setActive(isPressed || isPointerOver || isFocused);
+
+  trigger.addEventListener("click", () => {
+    isPressed = !isPressed;
+    render();
+  });
+  trigger.addEventListener("pointerenter", () => {
+    isPointerOver = true;
+    render();
+  });
+  trigger.addEventListener("pointerleave", () => {
+    isPointerOver = false;
+    render();
+  });
+  trigger.addEventListener("focusin", () => {
+    isFocused = true;
+    render();
+  });
+  trigger.addEventListener("focusout", () => {
+    isFocused = false;
+    render();
+  });
+
+  render();
+}
+
+// ============================================
 // Reveal-on-scroll (generic)
 // ============================================
 function initReveal() {
@@ -311,6 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initWorkProjectsTile();
   initProjectsMarquee();
   initWritingMarquee();
+  initBlogShareCard();
   initReveal();
   initStagger();
   initProjectFilter();
