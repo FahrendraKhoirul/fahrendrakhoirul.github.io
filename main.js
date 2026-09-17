@@ -273,12 +273,12 @@ function initBlogShareCard() {
     suppressTransientState = !isPressed;
     render();
   });
-  trigger.addEventListener("pointerenter", () => {
+  card.addEventListener("pointerenter", () => {
     isPointerOver = true;
     suppressTransientState = false;
     render();
   });
-  trigger.addEventListener("pointerleave", () => {
+  card.addEventListener("pointerleave", () => {
     isPointerOver = false;
     suppressTransientState = false;
     render();
