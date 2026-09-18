@@ -1,6 +1,24 @@
 // ============================================
 // Manifesto hero — sequential line reveals
 // ============================================
+function initClickSound() {
+  const clickSound = new Audio("https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/sounds/button_tiny.mp3");
+  clickSound.preload = "auto";
+  clickSound.volume = 0.18;
+
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (!(event.target instanceof Element) || !event.target.closest("section, article, a, button")) return;
+
+      clickSound.currentTime = 0;
+      const playPromise = clickSound.play();
+      if (playPromise) playPromise.catch(() => {});
+    },
+    true
+  );
+}
+
 function initManifesto() {
   const lines = document.querySelectorAll(".manifesto-line");
   const sub = document.querySelector(".manifesto-sub");
@@ -372,6 +390,7 @@ function initProjectFilter() {
 // Init
 // ============================================
 document.addEventListener("DOMContentLoaded", () => {
+  initClickSound();
   initManifesto();
   initPianoTile();
   initGalleryTile();
