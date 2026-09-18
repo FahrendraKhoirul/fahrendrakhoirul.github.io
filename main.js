@@ -223,10 +223,20 @@ function initWritingMarquee() {
 
   const createLine = (line) => {
     const element = document.createElement("span");
-    element.className = "page-hero-scribble";
-    element.dataset.color = line.color;
-    element.style.setProperty("--scribble-rotation", line.rotation);
-    element.textContent = line.text;
+    element.className = "page-hero-marquee-item";
+    element.dataset.initial = line.text.charAt(0).toUpperCase();
+
+    if (line.icon === "medium") {
+      const icon = document.createElement("img");
+      icon.className = "page-hero-marquee-icon";
+      icon.src = "assets/medium.svg";
+      icon.alt = "";
+      icon.setAttribute("aria-hidden", "true");
+      const name = document.createElement("span");
+      name.textContent = line.text;
+      element.append(icon, name);
+    }
+
     return element;
   };
 
