@@ -6,14 +6,39 @@ function initClickSound() {
   clickSound.preload = "auto";
   clickSound.volume = 0.18;
 
+  const playClickSound = () => {
+    clickSound.currentTime = 0;
+    const playPromise = clickSound.play();
+    if (playPromise) playPromise.catch(() => {});
+  };
+
   document.addEventListener(
     "click",
     (event) => {
-      if (!(event.target instanceof Element) || !event.target.closest("section, article, a, button")) return;
+      if (!(event.target instanceof Element)) return;
+      const interactiveElement = event.target.closest("a, button");
+      const section = event.target.closest("section, article");
+      if (!interactiveElement && !section) return;
 
-      clickSound.currentTime = 0;
-      const playPromise = clickSound.play();
-      if (playPromise) playPromise.catch(() => {});
+      const href = interactiveElement?.getAttribute("href");
+      const isLocalNavigation =
+        interactiveElement?.tagName === "A" &&
+        href &&
+        !href.startsWith("#") &&
+        !href.startsWith("mailto:") &&
+        !href.startsWith("tel:") &&
+        !interactiveElement.hasAttribute("target");
+
+      if (isLocalNavigation) {
+        event.preventDefault();
+        playClickSound();
+        window.setTimeout(() => {
+          window.location.href = href;
+        }, 120);
+        return;
+      }
+
+      playClickSound();
     },
     true
   );
