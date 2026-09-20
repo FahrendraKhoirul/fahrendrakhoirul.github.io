@@ -470,7 +470,7 @@
   .page-nav-writing,
   .page-nav-projects {
     --nav-back: var(--color-ink);
-    --nav-border: rgb(29 35 48 / 10%);
+    /* --nav-border: rgb(29 35 48 / 10%); */
     --nav-foreground: var(--color-ink);
     background: var(--nav-section-color);
     box-shadow: 0 14px 32px var(--nav-shadow), 0 2px 5px rgb(29 35 48 / 5%);
