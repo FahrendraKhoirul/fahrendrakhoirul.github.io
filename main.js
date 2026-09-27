@@ -412,6 +412,125 @@ function initProjectFilter() {
 }
 
 // ============================================
+// Project detail template (project-detail.html)
+// ============================================
+function initProjectDetail() {
+  const root = document.querySelector("[data-project-detail]");
+  const projects = window.projectDetails;
+  if (!root || !projects) return;
+
+  const requestedSlug = new URLSearchParams(window.location.search).get("project");
+  const slug = requestedSlug && projects[requestedSlug] ? requestedSlug : "medicare";
+  const project = projects[slug];
+
+  const setText = (selector, value) => {
+    const element = document.querySelector(selector);
+    if (element) element.textContent = value;
+  };
+
+  const renderTextList = (selector, items) => {
+    const list = document.querySelector(selector);
+    if (!list) return;
+    list.replaceChildren(
+      ...items.map((item) => {
+        const element = document.createElement("li");
+        element.textContent = item;
+        return element;
+      })
+    );
+  };
+
+  document.title = `${project.title} - Fahrendra Khoirul`;
+  document.querySelector('meta[name="description"]')?.setAttribute("content", project.summary);
+
+  setText("[data-detail-eyebrow]", project.eyebrow);
+  setText("[data-detail-title]", project.title);
+  setText("[data-detail-summary]", project.summary);
+  setText("[data-detail-context]", project.context);
+  setText("[data-detail-role]", project.role);
+  setText("[data-detail-period]", project.period);
+  setText("[data-detail-initials]", project.initials);
+  setText("[data-detail-visual-title]", project.title);
+  setText("[data-detail-visual-label]", project.category);
+  setText("[data-detail-overview]", project.overview);
+  setText("[data-detail-problem]", project.problem);
+  setText("[data-detail-contribution]", project.contribution);
+  setText("[data-detail-architecture]", project.architecture);
+  setText("[data-detail-outcome]", project.outcome);
+
+  const visual = document.querySelector("[data-detail-visual]");
+  if (visual) visual.style.setProperty("--detail-surface", project.surface);
+
+  const projectLink = document.querySelector("[data-detail-link]");
+  if (projectLink) {
+    if (project.linkUrl) {
+      projectLink.href = project.linkUrl;
+      projectLink.target = "_blank";
+      projectLink.rel = "noopener";
+    } else {
+      projectLink.href = "projects.html#selected-projects";
+      projectLink.removeAttribute("target");
+      projectLink.removeAttribute("rel");
+    }
+    projectLink.textContent = `${project.linkLabel} `;
+    const arrow = document.createElement("span");
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    projectLink.appendChild(arrow);
+  }
+
+  const flow = document.querySelector("[data-detail-flow]");
+  if (flow) {
+    flow.replaceChildren(
+      ...project.flow.map((step, index) => {
+        const item = document.createElement("li");
+        const number = document.createElement("span");
+        const title = document.createElement("strong");
+        const detail = document.createElement("small");
+        number.textContent = String(index + 1).padStart(2, "0");
+        title.textContent = step.label;
+        detail.textContent = step.detail;
+        item.append(number, title, detail);
+        return item;
+      })
+    );
+  }
+
+  renderTextList("[data-detail-challenges]", project.challenges);
+  renderTextList("[data-detail-decisions]", project.decisions);
+  renderTextList("[data-detail-stack]", project.stack);
+
+  const featureGrid = document.querySelector("[data-detail-features]");
+  if (featureGrid) {
+    featureGrid.replaceChildren(
+      ...project.features.map((feature, index) => {
+        const figure = document.createElement("figure");
+        const visualElement = document.createElement("div");
+        const caption = document.createElement("figcaption");
+        const title = document.createElement("strong");
+        const detail = document.createElement("small");
+
+        figure.className = "detail-feature-card";
+        visualElement.className = `detail-feature-art detail-feature-art-${index + 1}`;
+        title.textContent = feature.title;
+        detail.textContent = feature.detail;
+        caption.append(title, detail);
+        figure.append(visualElement, caption);
+        return figure;
+      })
+    );
+  }
+
+  const nextProject = projects[project.next];
+  const nextLink = document.querySelector("[data-detail-next]");
+  const nextTitle = document.querySelector("[data-detail-next-title]");
+  if (nextProject && nextLink && nextTitle) {
+    nextLink.href = `project-detail.html?project=${project.next}`;
+    nextTitle.textContent = nextProject.title;
+  }
+}
+
+// ============================================
 // Init
 // ============================================
 document.addEventListener("DOMContentLoaded", () => {
@@ -427,4 +546,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initStagger();
   initProjectFilter();
+  initProjectDetail();
 });
