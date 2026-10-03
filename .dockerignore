@@ -1,0 +1,5 @@
+.git
+.agents
+node_modules
+files.zip
+.DS_Store
