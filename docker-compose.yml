@@ -1,12 +1,8 @@
 services:
   fahrendra-khoirul:
-    build:
-      context: .
+    build: .
     expose:
       - "80"
-    volumes:
-      - caddy_data:/data
-      - caddy_config:/config
     restart: unless-stopped
     networks:
       - web
@@ -14,7 +10,3 @@ services:
 networks:
   web:
     external: true
-
-volumes:
-  caddy_data:
-  caddy_config:
