@@ -2045,6 +2045,10 @@
     background: white;
   }
 
+  .career-panel .section-heading h2 {
+    font-family: var(--font-sans);
+  }
+
   .career-timeline {
     margin-top: clamp(2rem, 5vw, 3.5rem);
   }
