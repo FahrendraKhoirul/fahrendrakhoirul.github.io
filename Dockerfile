@@ -1,14 +1,18 @@
-FROM node:alpine AS build
+FROM node:20-alpine AS build
 
 WORKDIR /app
-COPY package*.json ./
+
+COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
 RUN npm run build
 
-FROM caddy:alpine
+FROM caddy:2-alpine
 
-COPY --from=build /app/out /usr/share/caddy
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY --from=build /app/*.html /usr/share/caddy/
+COPY --from=build /app/main.js /usr/share/caddy/
+COPY --from=build /app/assets /usr/share/caddy/assets
 
-CMD ["caddy", "file-server", "--root", "/usr/share/caddy", "--listen", ":80"]
+EXPOSE 80
