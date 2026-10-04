@@ -1,5 +1,14 @@
-FROM nginx:alpine
+FROM node:alpine AS build
 
-COPY . /usr/share/nginx/html
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
 
-EXPOSE 80
+COPY . .
+RUN npm run build
+
+FROM caddy:alpine
+
+COPY --from=build /app/out /usr/share/caddy
+
+CMD ["caddy", "file-server", "--root", "/usr/share/caddy", "--listen", ":80"]
