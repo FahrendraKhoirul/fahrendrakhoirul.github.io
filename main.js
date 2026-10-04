@@ -256,6 +256,49 @@ function initProjectsMarquee() {
 }
 
 // ============================================
+// Awards hero marquee
+// ============================================
+function initAwardsMarquee() {
+  const marquee = document.querySelector("[data-awards-marquee]");
+  const tracks = marquee?.querySelectorAll("[data-awards-marquee-track]");
+  const items = window.awardsMarqueeItems;
+  if (!marquee || !tracks?.length || !Array.isArray(items) || !items.length) return;
+
+  const createItem = (item) => {
+    const element = document.createElement("span");
+    const name = document.createElement("span");
+    element.className = "page-hero-marquee-item";
+    element.dataset.initial = item.initial || item.name.charAt(0).toUpperCase();
+    name.textContent = item.name;
+
+    if (item.icon) {
+      const icon = document.createElement("img");
+      icon.className = "page-hero-marquee-icon";
+      icon.src = item.icon;
+      icon.alt = "";
+      icon.addEventListener("error", () => {
+        element.classList.add("is-icon-missing");
+        icon.remove();
+      });
+      element.append(icon, name);
+    } else {
+      element.classList.add("is-icon-missing");
+      element.append(name);
+    }
+
+    return element;
+  };
+
+  tracks.forEach((track) => {
+    const fragment = document.createDocumentFragment();
+    for (let copy = 0; copy < 2; copy += 1) {
+      items.forEach((item) => fragment.appendChild(createItem(item)));
+    }
+    track.replaceChildren(fragment);
+  });
+}
+
+// ============================================
 // Blog hero writing scratch marquee
 // ============================================
 function initWritingMarquee() {
@@ -531,6 +574,164 @@ function initProjectDetail() {
 }
 
 // ============================================
+// Small wins (awards.html)
+// ============================================
+function initAwards() {
+  const list = document.querySelector("[data-awards-list]");
+  const awards = window.awards;
+  const drawer = document.querySelector("[data-award-drawer]");
+  if (!list || !drawer || !Array.isArray(awards)) return;
+
+  const closeButtons = drawer.querySelectorAll("[data-award-drawer-close]");
+  const drawerKind = drawer.querySelector("[data-award-drawer-kind]");
+  const drawerDate = drawer.querySelector("[data-award-drawer-date]");
+  const drawerTitle = drawer.querySelector("[data-award-drawer-title]");
+  const drawerPlacement = drawer.querySelector("[data-award-drawer-placement]");
+  const drawerSummary = drawer.querySelector("[data-award-drawer-summary]");
+  const drawerProject = drawer.querySelector("[data-award-drawer-project]");
+  const drawerOrganizer = drawer.querySelector("[data-award-drawer-organizer]");
+  const drawerTeamName = drawer.querySelector("[data-award-drawer-team-name]");
+  const drawerTeam = drawer.querySelector("[data-award-drawer-team]");
+  const drawerLinks = drawer.querySelector("[data-award-drawer-links]");
+  const drawerEmbeds = drawer.querySelector("[data-award-drawer-embeds]");
+  const drawerEmbedList = drawer.querySelector("[data-award-drawer-embed-list]");
+  let selectedControl;
+  let closeTimer;
+
+  const externalLink = (link) => {
+    const anchor = document.createElement("a");
+    const arrow = document.createElement("b");
+    anchor.className = "win-link";
+    anchor.href = link.url;
+    anchor.target = "_blank";
+    anchor.rel = "noopener";
+    anchor.textContent = `${link.label} `;
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    anchor.appendChild(arrow);
+    return anchor;
+  };
+
+  const teamMember = (member) => {
+    if (!member.url) return document.createTextNode(member.name);
+    const anchor = document.createElement("a");
+    anchor.href = member.url;
+    anchor.target = "_blank";
+    anchor.rel = "noopener";
+    anchor.textContent = member.name;
+    return anchor;
+  };
+
+  const embedPost = (resource) => {
+    const frame = document.createElement("iframe");
+    frame.src = resource.url;
+    frame.title = resource.label;
+    frame.loading = "lazy";
+    frame.allowFullscreen = true;
+    frame.style.height = `${resource.height || 620}px`;
+    return frame;
+  };
+
+  const closeDrawer = () => {
+    if (drawer.hidden) return;
+    drawer.classList.remove("is-open");
+    document.body.classList.remove("is-award-drawer-open");
+    selectedControl?.setAttribute("aria-expanded", "false");
+    closeTimer = window.setTimeout(() => {
+      drawer.hidden = true;
+      selectedControl?.focus();
+    }, 220);
+  };
+
+  const openDrawer = (award, control) => {
+    window.clearTimeout(closeTimer);
+    selectedControl?.setAttribute("aria-expanded", "false");
+    selectedControl = control;
+    selectedControl.setAttribute("aria-expanded", "true");
+
+    drawerKind.textContent = award.kind;
+    drawerDate.dateTime = award.dateTime;
+    drawerDate.textContent = award.date;
+    drawerTitle.textContent = award.title;
+    drawerPlacement.textContent = award.placement;
+    drawerSummary.textContent = award.summary;
+    drawerProject.textContent = award.project;
+    drawerOrganizer.textContent = award.organizer;
+    drawerTeamName.textContent = award.teamName;
+    drawerTeam.replaceChildren(
+      ...award.team.map((member) => {
+        const item = document.createElement("li");
+        item.append(teamMember(member));
+        return item;
+      })
+    );
+    const links = award.links.filter((resource) => resource.type !== "embed");
+    const embeds = award.links.filter((resource) => resource.type === "embed");
+    drawerLinks.replaceChildren(...links.map((link) => externalLink(link)));
+    drawerEmbeds.hidden = embeds.length === 0;
+    drawerEmbedList.replaceChildren(...embeds.map((resource) => embedPost(resource)));
+
+    drawer.hidden = false;
+    document.body.classList.add("is-award-drawer-open");
+    requestAnimationFrame(() => {
+      drawer.classList.add("is-open");
+      drawer.querySelector(".award-drawer-close")?.focus();
+    });
+  };
+
+  list.replaceChildren(
+    ...awards.map((award) => {
+      const entry = document.createElement("button");
+      const content = document.createElement("div");
+      const title = document.createElement("h3");
+      const placement = document.createElement("p");
+      const media = document.createElement("div");
+      const arrow = document.createElement("span");
+
+      entry.className = "win-card bento-panel";
+      entry.type = "button";
+      entry.setAttribute("aria-haspopup", "dialog");
+      entry.setAttribute("aria-expanded", "false");
+      entry.setAttribute("aria-label", `Show details for ${award.title}`);
+      content.className = "win-card-content";
+      title.textContent = award.title;
+      placement.className = "win-placement";
+      placement.textContent = award.placement;
+      media.className = "win-card-media";
+      media.style.setProperty("--award-surface", award.surface || "#dbe8f5");
+      arrow.className = "win-card-arrow";
+      arrow.setAttribute("aria-hidden", "true");
+      arrow.textContent = "→";
+
+      if (award.image) {
+        const image = document.createElement("img");
+        image.src = award.image;
+        image.alt = award.imageAlt || "";
+        image.style.objectPosition = award.imagePosition || "center";
+        media.appendChild(image);
+      } else {
+        const mark = document.createElement("span");
+        mark.className = "win-card-media-mark";
+        mark.setAttribute("aria-hidden", "true");
+        mark.textContent = award.project.charAt(0).toUpperCase();
+        media.appendChild(mark);
+      }
+      media.appendChild(arrow);
+
+      content.append(title, placement);
+      entry.append(content, media);
+      entry.addEventListener("click", () => openDrawer(award, entry));
+      return entry;
+    })
+  );
+
+  closeButtons.forEach((button) => button.addEventListener("click", closeDrawer));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeDrawer();
+  });
+}
+
+// ============================================
 // Init
 // ============================================
 document.addEventListener("DOMContentLoaded", () => {
@@ -541,10 +742,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initProfileNotes();
   initWorkProjectsTile();
   initProjectsMarquee();
+  initAwardsMarquee();
   initWritingMarquee();
   initBlogShareCard();
   initReveal();
   initStagger();
   initProjectFilter();
   initProjectDetail();
+  initAwards();
 });

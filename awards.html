@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small wins — Fahrendra Khoirul</title>
+<meta name="description" content="Small wins, shipped work, and milestones by Fahrendra Khoirul.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Lobster&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23FFFFFF' font-family='Georgia, serif' font-weight='400'%3EF%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<main id="main" class="page-shell">
+  <div class="page-frame">
+    <nav class="page-nav page-nav-awards" aria-label="Page navigation">
+      <a class="page-nav-back" href="index.html">
+        <span class="page-nav-back-icon" aria-hidden="true">&larr;</span>
+        <span>Back</span>
+      </a>
+      <span class="page-nav-title">Achievement</span>
+    </nav>
+
+    <div class="page-grid">
+      <section class="page-hero page-hero-awards bento-panel bento-enter md:col-span-12" aria-labelledby="awards-title">
+        <div class="page-hero-copy">
+          <h1 id="awards-title" class="page-title">Small wins, for me.</h1>
+        </div>
+        <div class="page-hero-marquee" data-awards-marquee aria-hidden="true">
+          <div class="page-hero-marquee-row">
+            <div class="page-hero-marquee-track" data-awards-marquee-track></div>
+          </div>
+          <div class="page-hero-marquee-row page-hero-marquee-row-reverse">
+            <div class="page-hero-marquee-track" data-awards-marquee-track></div>
+          </div>
+        </div>
+        <img class="page-hero-trophy" src="assets/trophy.png" alt="" aria-hidden="true">
+      </section>
+
+      <section class="wins-section bento-enter md:col-span-12" aria-label="Awards and achievements">
+        <div class="wins-list" data-awards-list aria-live="polite"></div>
+      </section>
+    </div>
+
+    <footer class="page-footer">
+      <span>&copy; 2026 Fahrendra Khoirul</span>
+      <ul>
+        <li><a href="https://github.com/FahrendraKhoirul" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/fahrendra-khoirul-ihtada/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://medium.com/@fahrendra.khoirul" target="_blank" rel="noopener">Medium</a></li>
+      </ul>
+    </footer>
+  </div>
+</main>
+
+<div class="award-drawer-layer" data-award-drawer hidden>
+  <button class="award-drawer-backdrop" type="button" data-award-drawer-close aria-label="Close achievement details"></button>
+  <aside class="award-drawer" role="dialog" aria-modal="true" aria-labelledby="award-drawer-title" tabindex="-1">
+    <div class="award-drawer-head">
+      <span class="meta-label" data-award-drawer-kind></span>
+      <button class="award-drawer-close" type="button" data-award-drawer-close aria-label="Close achievement details">&times;</button>
+    </div>
+    <div class="award-drawer-body">
+      <time class="award-drawer-date" data-award-drawer-date></time>
+      <h2 id="award-drawer-title" data-award-drawer-title></h2>
+      <p class="award-drawer-placement" data-award-drawer-placement></p>
+      <p class="award-drawer-summary" data-award-drawer-summary></p>
+      <dl class="award-drawer-facts">
+        <div>
+          <dt>Project</dt>
+          <dd data-award-drawer-project></dd>
+        </div>
+        <div>
+          <dt>Organizer</dt>
+          <dd data-award-drawer-organizer></dd>
+        </div>
+      </dl>
+      <section class="award-drawer-section" aria-labelledby="award-drawer-team-title">
+        <h3 id="award-drawer-team-title" data-award-drawer-team-name></h3>
+        <ul data-award-drawer-team></ul>
+      </section>
+      <div class="award-drawer-links" data-award-drawer-links></div>
+      <section class="award-drawer-embeds" data-award-drawer-embeds hidden aria-labelledby="award-drawer-embeds-title">
+        <h3 id="award-drawer-embeds-title">Updates</h3>
+        <div data-award-drawer-embed-list></div>
+      </section>
+    </div>
+  </aside>
+</div>
+
+<script src="assets/data/awards-marquee.js"></script>
+<script src="assets/data/awards.js"></script>
+<script src="main.js?v=20261004-7"></script>
+</body>
+</html>
