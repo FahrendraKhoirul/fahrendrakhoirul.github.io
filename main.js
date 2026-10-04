@@ -583,6 +583,8 @@ function initAwards() {
   if (!list || !drawer || !Array.isArray(awards)) return;
 
   const closeButtons = drawer.querySelectorAll("[data-award-drawer-close]");
+  const drawerBackground = drawer.querySelector("[data-award-drawer-background]");
+  const drawerArt = drawer.querySelector("[data-award-drawer-art]");
   const drawerKind = drawer.querySelector("[data-award-drawer-kind]");
   const drawerDate = drawer.querySelector("[data-award-drawer-date]");
   const drawerTitle = drawer.querySelector("[data-award-drawer-title]");
@@ -649,6 +651,17 @@ function initAwards() {
     selectedControl = control;
     selectedControl.setAttribute("aria-expanded", "true");
 
+    drawerBackground.style.backgroundImage = award.image ? `url("${award.image}")` : "none";
+    drawerArt.replaceChildren();
+    if (award.icon) {
+      const image = document.createElement("img");
+      image.src = award.icon;
+      image.alt = award.iconAlt || "";
+      image.style.objectFit = "contain";
+      drawerArt.appendChild(image);
+    } else {
+      drawerArt.textContent = award.project.charAt(0).toUpperCase();
+    }
     drawerKind.textContent = award.kind;
     drawerDate.dateTime = award.dateTime;
     drawerDate.textContent = award.date;

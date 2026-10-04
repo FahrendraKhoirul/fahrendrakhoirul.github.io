@@ -131,6 +131,7 @@
     min-width: 0;
     padding: 0;
     background: white;
+    color: var(--color-ink);
     cursor: pointer;
     text-align: left;
     transition: box-shadow 220ms ease-out;
@@ -291,6 +292,7 @@
     height: 100%;
     overflow-y: auto;
     background: white;
+    color: var(--color-ink);
     box-shadow: -1.5rem 0 3rem rgb(29 35 48 / 18%);
     opacity: 0;
     transform: translateX(100%);
@@ -310,13 +312,81 @@
     transform: translateX(0);
   }
 
+  .award-drawer-hero {
+    position: relative;
+    min-height: 23rem;
+    overflow: hidden;
+    isolation: isolate;
+    background: #282828;
+  }
+
+  .award-drawer-hero-background,
+  .award-drawer-hero-shade {
+    position: absolute;
+    inset: 0;
+  }
+
+  .award-drawer-hero-background {
+    z-index: -2;
+    background-position: center;
+    background-size: cover;
+    filter: saturate(0.8);
+    opacity: 0.72;
+    transform: scale(1.12);
+  }
+
+  .award-drawer-hero-shade {
+    z-index: -1;
+    background: linear-gradient(180deg, rgb(18 18 18 / 26%) 0%, rgb(18 18 18 / 15%) 35%, #121212 100%);
+  }
+
   .award-drawer-head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid var(--color-line);
+    padding: 1.25rem 1.5rem 0;
+  }
+
+  .award-drawer-hero-content {
+    display: grid;
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    align-items: end;
+    gap: 1.5rem;
+    padding: 4.5rem 2rem 2rem;
+  }
+
+  .award-drawer-art {
+    display: grid;
+    aspect-ratio: 1;
+    overflow: hidden;
+    place-items: center;
+    padding: 1rem;
+    background: white;
+    color: var(--color-ink);
+    box-shadow: 0 1rem 2.5rem rgb(0 0 0 / 30%);
+    font-family: var(--font-serif);
+    font-size: 4rem;
+  }
+
+  .award-drawer-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .award-drawer-heading {
+    min-width: 0;
+  }
+
+  .award-drawer-kind {
+    display: block;
+    color: rgb(255 255 255 / 72%);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .award-drawer-close {
@@ -326,8 +396,8 @@
     place-items: center;
     border: 1px solid var(--color-line);
     border-radius: 9999px;
-    background: #f4f5f7;
-    color: var(--color-ink);
+    background: rgb(255 255 255 / 14%);
+    color: white;
     cursor: pointer;
     font-size: 1.5rem;
     line-height: 1;
@@ -335,8 +405,8 @@
   }
 
   .award-drawer-close:hover {
-    background: var(--color-ink);
-    color: white;
+    background: white;
+    color: #121212;
   }
 
   .award-drawer-close:focus-visible {
@@ -345,41 +415,40 @@
   }
 
   .award-drawer-body {
-    padding: clamp(1.5rem, 5vw, 2.5rem);
+    padding: 0 clamp(1.5rem, 5vw, 2.5rem) 2.5rem;
+  }
+
+  .award-drawer h2 {
+    margin-top: 0.5rem;
+    color: white;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 500;
+    line-height: 0.98;
+    text-wrap: balance;
   }
 
   .award-drawer-date {
-    display: inline-flex;
-    padding: 0.35rem 0.45rem;
-    border: 1px solid var(--color-line);
-    border-radius: 0.25rem;
-    background: #f4f5f7;
-    color: var(--color-ink);
+    display: block;
+    margin-top: 0.7rem;
+    color: rgb(255 255 255 / 70%);
     font-family: var(--font-mono);
     font-size: 0.7rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
 
-  .award-drawer h2 {
-    margin-top: 1rem;
-    font-family: var(--font-serif);
-    font-size: clamp(2rem, 6vw, 3.25rem);
-    font-weight: 500;
-    line-height: 0.98;
-    text-wrap: balance;
-  }
-
   .award-drawer-placement {
-    margin-top: 1rem;
-    color: var(--color-brand);
+    margin-top: 0.65rem;
+    color: rgb(255 255 255 / 82%);
     font-size: 0.8125rem;
     font-weight: 600;
     line-height: 1.5;
   }
 
   .award-drawer-summary {
-    margin-top: 1.25rem;
+    margin: 0;
+    padding: 2rem 0 1.75rem;
     color: var(--color-ink-soft);
     font-size: 0.9375rem;
     line-height: 1.75;
@@ -475,6 +544,16 @@
   @media (max-width: 42rem) {
     .award-drawer {
       width: 100%;
+    }
+
+    .award-drawer-hero {
+      min-height: 22rem;
+    }
+
+    .award-drawer-hero-content {
+      grid-template-columns: 7rem minmax(0, 1fr);
+      gap: 1rem;
+      padding: 3.5rem 1.25rem 1.5rem;
     }
 
     .wins-list {

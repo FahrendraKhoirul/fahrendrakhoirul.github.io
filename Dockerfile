@@ -1,6 +1,5 @@
-FROM caddy:alpine
+FROM nginx:alpine
 
-COPY . /usr/share/caddy
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY . /usr/share/nginx/html
 
 EXPOSE 80

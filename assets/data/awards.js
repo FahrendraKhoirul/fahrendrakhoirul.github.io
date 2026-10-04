@@ -10,6 +10,8 @@ window.awards = [
     project: "Cookuy",
     summary: "An AI-powered recipe app that helps people decide what to cook.",
     image: "https://informatika.uin-malang.ac.id/wp-content/uploads/2023/03/IMG_20230318_182530-scaled-1-2048x1538.jpg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
+    iconAlt: "Google icon",
     imageAlt: "",
     imagePosition: "center",
     surface: "#bfe8db",
@@ -21,8 +23,9 @@ window.awards = [
       { name: "Fahrendra Khoirul Ihtada" },
     ],
     links: [
+      { type: "embed", label: "HackFest video", url: "https://www.youtube.com/embed/BXU4k7KZOBM?si=RkYbKhJ0m1MWPwkC", height: 315 },
+      { type: "embed", label: "LinkedIn update", url: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7043943269549953024?collapsed=1", height: 628 },
       { type: "embed", label: "Official result", url: "https://informatika.uin-malang.ac.id/the-top-10-team-of-hackfest-2023/", height: 720 },
-      { type: "link", label: "LinkedIn update", url: "https://www.linkedin.com/posts/fahrendra-khoirul-ihtada_indonesia-gdsc-hackathon-activity-7043943270476914688-68NO?utm_source=share&utm_medium=member_desktop&rcm=ACoAADRDabsBJ-LK1ZfEdPZ246uGthgNOBzRxpM" },
     ],
   },
   {
@@ -36,6 +39,8 @@ window.awards = [
     project: "Cookuy",
     summary: "Cookuy continued into a global challenge as an AI-powered recipe app.",
     image: "https://media.licdn.com/dms/image/v2/D5622AQF9R8UzyApOPQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1692611084848?e=1792627200&v=beta&t=1nxuvxqej855j0hW2J5N3c9aLRJh8ol-R5MXCQZ71iY",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
+    iconAlt: "Google icon",
     imageAlt: "",
     imagePosition: "center",
     surface: "#dbe8f5",
@@ -47,6 +52,7 @@ window.awards = [
       { name: "Fahrendra Khoirul Ihtada" },
     ],
     links: [
+      { type: "embed", label: "Solution Challenge video", url: "https://www.youtube.com/embed/BXU4k7KZOBM?si=RkYbKhJ0m1MWPwkC", height: 315 },
       { type: "embed", label: "Solution Challenge update 1", url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7099325444960784384?collapsed=1", height: 670 },
       { type: "embed", label: "Solution Challenge update 2", url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7061997961320288256?collapsed=1", height: 645 },
     ],
@@ -62,6 +68,8 @@ window.awards = [
     project: "Machine learning path",
     summary: "Completed Bangkit Academy and earned a TensorFlow Developer Certification afterward.",
     image: "https://media.licdn.com/dms/image/v2/D5622AQFehNcO3XNqPQ/feedshare-image-high-res/feedshare-image-high-res/0/1691865003206?e=1792627200&v=beta&t=oZvNzIw0RPWB3exRmD9AhNb__VjjDibxB4050VqBzZI",
+    icon: "assets/bangkit.png",
+    iconAlt: "Bangkit Academy icon",
     imageAlt: "",
     imagePosition: "center",
     surface: "#ffdf9c",
@@ -83,6 +91,8 @@ window.awards = [
     project: "Let's Jama'ah",
     summary: "An app for prayer support, with nearby mosque discovery and a dhikr feature.",
     image: "https://informatika.uin-malang.ac.id/wp-content/uploads/2022/11/MIISE1.jpeg",
+    icon: "assets/uin-malang.png",
+    iconAlt: "UIN Malang icon",
     imageAlt: "",
     imagePosition: "center",
     surface: "#f4cbca",
@@ -94,7 +104,7 @@ window.awards = [
       { name: "Dinindriya Izzatinisa" },
     ],
     links: [
-      { type: "link", label: "Official result", url: "https://informatika.uin-malang.ac.id/best-of-product-islamic-and-science-value-1st-runner-up/" },
+      { type: "embed", label: "Official result", url: "https://informatika.uin-malang.ac.id/best-of-product-islamic-and-science-value-1st-runner-up/" },
     ],
   },
 ];

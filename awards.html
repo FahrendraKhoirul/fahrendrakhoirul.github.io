@@ -60,14 +60,23 @@
 <div class="award-drawer-layer" data-award-drawer hidden>
   <button class="award-drawer-backdrop" type="button" data-award-drawer-close aria-label="Close achievement details"></button>
   <aside class="award-drawer" role="dialog" aria-modal="true" aria-labelledby="award-drawer-title" tabindex="-1">
-    <div class="award-drawer-head">
-      <span class="meta-label" data-award-drawer-kind></span>
-      <button class="award-drawer-close" type="button" data-award-drawer-close aria-label="Close achievement details">&times;</button>
+    <div class="award-drawer-hero">
+      <div class="award-drawer-hero-background" data-award-drawer-background aria-hidden="true"></div>
+      <div class="award-drawer-hero-shade" aria-hidden="true"></div>
+      <div class="award-drawer-head">
+        <button class="award-drawer-close" type="button" data-award-drawer-close aria-label="Close achievement details">&times;</button>
+      </div>
+      <div class="award-drawer-hero-content">
+        <div class="award-drawer-art" data-award-drawer-art aria-hidden="true"></div>
+        <div class="award-drawer-heading">
+          <span class="award-drawer-kind" data-award-drawer-kind></span>
+          <h2 id="award-drawer-title" data-award-drawer-title></h2>
+          <p class="award-drawer-placement" data-award-drawer-placement></p>
+          <time class="award-drawer-date" data-award-drawer-date></time>
+        </div>
+      </div>
     </div>
     <div class="award-drawer-body">
-      <time class="award-drawer-date" data-award-drawer-date></time>
-      <h2 id="award-drawer-title" data-award-drawer-title></h2>
-      <p class="award-drawer-placement" data-award-drawer-placement></p>
       <p class="award-drawer-summary" data-award-drawer-summary></p>
       <dl class="award-drawer-facts">
         <div>
@@ -93,7 +102,7 @@
 </div>
 
 <script src="assets/data/awards-marquee.js"></script>
-<script src="assets/data/awards.js"></script>
-<script src="main.js?v=20261004-7"></script>
+<script src="assets/data/awards.js?v=20261005-linkedin-fix"></script>
+<script src="main.js?v=20261005-icons"></script>
 </body>
 </html>
