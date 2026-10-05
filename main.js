@@ -455,6 +455,81 @@ function initProjectFilter() {
 }
 
 // ============================================
+// Career journey (projects.html)
+// ============================================
+function initCareerJourney() {
+  const entries = window.careerJourney;
+  if (!Array.isArray(entries) || !entries.length) return;
+
+  const createCompanyMark = (entry) => {
+    const mark = document.createElement("span");
+    const fallback = document.createElement("span");
+    mark.className = "career-company-mark";
+    mark.setAttribute("aria-hidden", "true");
+    fallback.className = "career-company-fallback";
+    fallback.textContent = entry.organization.charAt(0).toUpperCase();
+    mark.appendChild(fallback);
+
+    if (!entry.logoUrl) return mark;
+
+    const image = document.createElement("img");
+    image.src = entry.logoUrl;
+    image.alt = "";
+    image.addEventListener("load", () => mark.classList.add("has-logo"));
+    image.addEventListener("error", () => image.remove());
+    mark.appendChild(image);
+    return mark;
+  };
+
+  const createEntry = (entry) => {
+    const article = document.createElement("article");
+    const period = document.createElement("time");
+    const identity = document.createElement("div");
+    const company = document.createElement("span");
+    const role = document.createElement("h3");
+    const meta = document.createElement("div");
+    const context = document.createElement("span");
+    const location = document.createElement("span");
+
+    article.className = "career-entry";
+    period.className = "career-period";
+    period.dateTime = entry.startDate;
+    period.textContent = entry.period;
+    identity.className = "career-identity";
+    company.className = "career-company";
+    company.textContent = entry.organization;
+    role.textContent = entry.role;
+    meta.className = "career-meta";
+    context.className = "career-context";
+    context.textContent = [entry.employmentType, entry.workMode].filter(Boolean).join(" · ");
+    location.className = "career-location";
+    location.textContent = entry.location;
+
+    identity.append(createCompanyMark(entry), company);
+    meta.append(context, location);
+    article.append(period, identity, role, meta);
+    return article;
+  };
+
+  const groups = [
+    {
+      timeline: document.querySelector('[data-career-journey="work"]'),
+      entries: entries.filter((entry) => entry.employmentType !== "Internship"),
+    },
+    {
+      timeline: document.querySelector('[data-career-journey="internships"]'),
+      entries: entries.filter((entry) => entry.employmentType === "Internship"),
+    },
+  ];
+
+  groups.forEach(({ timeline, entries: groupEntries }) => {
+    if (!timeline) return;
+    const sortedEntries = [...groupEntries].sort((left, right) => right.startDate.localeCompare(left.startDate));
+    timeline.replaceChildren(...sortedEntries.map(createEntry));
+  });
+}
+
+// ============================================
 // Project detail template (project-detail.html)
 // ============================================
 function initProjectDetail() {
@@ -761,6 +836,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initStagger();
   initProjectFilter();
+  initCareerJourney();
   initProjectDetail();
   initAwards();
 });

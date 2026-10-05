@@ -2040,9 +2040,18 @@
     letter-spacing: 0.06em;
   }
 
-  .career-panel,
+  .career-panel-work,
   .selected-projects-heading {
     background: white;
+  }
+
+  .career-panel-internships {
+    background: #dbe8f5;
+  }
+
+  .career-panel-internships .career-company-mark,
+  .career-panel-internships .career-entry:hover {
+    background: rgb(255 255 255 / 58%);
   }
 
   .career-panel .section-heading h2 {
@@ -2050,113 +2059,105 @@
   }
 
   .career-timeline {
-    margin-top: clamp(2rem, 5vw, 3.5rem);
+    margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    border-top: 1px solid var(--color-line);
   }
 
   .career-entry {
     display: grid;
-    grid-template-columns: 8rem 1rem minmax(0, 1fr);
-    gap: 1rem;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--color-line);
+    grid-template-columns: minmax(7.5rem, 0.6fr) minmax(10rem, 0.9fr) minmax(0, 1.25fr) minmax(10rem, 0.8fr);
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-line);
+    transition: background-color 220ms ease-out;
   }
 
-  .career-entry:last-child {
-    padding-bottom: 0;
+  .career-entry:hover {
+    background: var(--color-page);
   }
 
-  .career-date {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    padding-top: 0.15rem;
-    color: var(--color-ink-soft);
+  .career-period {
+    color: var(--color-ink);
     font-family: var(--font-mono);
     font-size: 0.7rem;
     line-height: 1.45;
     text-transform: uppercase;
   }
 
-  .career-date time,
-  .career-date span:first-child {
-    color: var(--color-ink);
-  }
-
-  .career-track {
-    position: relative;
+  .career-identity {
     display: flex;
-    justify-content: center;
-  }
-
-  .career-track::before {
-    position: absolute;
-    top: 0;
-    bottom: -1.5rem;
-    width: 1px;
-    background: rgb(29 35 48 / 14%);
-    content: "";
-  }
-
-  .career-entry:last-child .career-track::before {
-    bottom: 0;
-  }
-
-  .career-track span {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: 0.7rem;
-    height: 0.7rem;
-    margin-top: 0.25rem;
-    border: 2px solid white;
-    border-radius: 9999px;
-    background: var(--color-brand);
-    box-shadow: 0 0 0 1px rgb(29 35 48 / 16%);
-  }
-
-  .career-content {
+    align-items: center;
+    gap: 0.625rem;
     min-width: 0;
   }
 
-  .career-heading {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .career-company {
+  .career-company-mark {
+    display: grid;
+    flex: 0 0 auto;
+    width: 2.35rem;
+    height: 2.35rem;
+    overflow: hidden;
+    place-items: center;
+    border: 1px solid var(--color-line);
+    border-radius: 0.25rem;
+    background: white;
     color: var(--color-ink-soft);
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .career-heading h3 {
-    margin: 0.35rem 0 0;
-    font-family: var(--font-serif);
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 500;
-    line-height: 1.05;
-  }
-
-  .career-context {
-    flex: 0 0 auto;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid var(--color-line);
-    border-radius: 9999px;
-    color: var(--color-ink-soft);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 600;
   }
 
-  .career-content > p {
-    max-width: 58ch;
-    margin: 1rem 0 0;
+  .career-company-mark img,
+  .career-company-fallback {
+    grid-area: 1 / 1;
+  }
+
+  .career-company-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+  }
+
+  .career-company-mark.has-logo img {
+    opacity: 1;
+  }
+
+  .career-company {
+    min-width: 0;
+    color: var(--color-ink);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .career-entry h3 {
+    min-width: 0;
+    margin: 0;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .career-meta {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  .career-context,
+  .career-location {
     color: var(--color-ink-soft);
-    font-size: 0.9375rem;
-    line-height: 1.7;
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .career-context {
+    color: var(--color-ink);
+    font-weight: 600;
   }
 
   .career-projects {
@@ -2737,26 +2738,29 @@
     justify-content: space-between;
   }
 
-  .section-heading {
-    gap: 1rem;
-  }
-
-  .section-index {
-    flex: 0 0 auto;
-  }
-
   .career-entry {
-    grid-template-columns: 4rem 0.75rem minmax(0, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.75rem 1rem;
+    align-items: start;
+    padding: 1.125rem 0;
   }
 
-  .career-heading {
-    flex-direction: column;
-    gap: 0.75rem;
+  .career-period {
+    grid-column: 1 / -1;
   }
 
-  .career-context {
-    align-self: flex-start;
+  .career-identity {
+    align-self: center;
+  }
+
+  .career-entry h3 {
+    grid-column: 2;
+    margin-top: -0.5rem;
+  }
+
+  .career-meta {
+    grid-column: 2;
+    margin-top: -0.35rem;
   }
 
   .career-project-grid,

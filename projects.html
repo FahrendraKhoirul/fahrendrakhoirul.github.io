@@ -30,7 +30,8 @@
         <div class="page-hero-copy">
           <h1 id="work-title" class="page-title">Work &amp; Projects.</h1>
           <nav class="work-view-nav" aria-label="Work sections">
-            <a class="work-view-link" href="#career-journey">Career journey <b aria-hidden="true">&darr;</b></a>
+            <a class="work-view-link" href="#work-experience">Work experience <b aria-hidden="true">&darr;</b></a>
+            <a class="work-view-link" href="#internships">Internships <b aria-hidden="true">&darr;</b></a>
             <a class="work-view-link" href="#selected-projects">Selected projects <b aria-hidden="true">&darr;</b></a>
           </nav>
         </div>
@@ -47,90 +48,20 @@
         </div>
       </section>
 
-      <section id="career-journey" class="career-panel content-panel bento-panel bento-enter md:col-span-12" aria-labelledby="career-title">
+      <section id="work-experience" class="career-panel career-panel-work content-panel bento-panel bento-enter md:col-span-12" aria-labelledby="work-experience-title">
         <div class="section-heading">
-          <div>
-            <h2 id="career-title">My Career Journey</h2>
-          </div>
+          <h2 id="work-experience-title">Work</h2>
         </div>
 
-        <div class="career-timeline">
-          <article class="career-entry">
-            <div class="career-date">
-              <time datetime="2024-09">Sep 2024</time>
-              <span>Present</span>
-            </div>
-            <div class="career-track" aria-hidden="true"><span></span></div>
-            <div class="career-content">
-              <div class="career-heading">
-                <div>
-                  <span class="career-company">Penawar Medical Supply</span>
-                  <h3>Mobile developer</h3>
-                </div>
-                <span class="career-context">Company work</span>
-              </div>
-              <p>Building healthcare mobile products, realtime communication, payment, and teleconsultation systems.</p>
-              <div class="career-projects">
-                <span class="meta-label">Projects</span>
-                <div class="career-project-grid">
-                  <a class="career-project-link" href="project-detail.html?project=medicare">
-                    <span class="career-project-thumb career-project-thumb-mint" aria-hidden="true">MC</span>
-                    <span>Medicare</span>
-                    <b aria-hidden="true">&nearr;</b>
-                  </a>
-                  <a class="career-project-link" href="project-detail.html?project=doclocum">
-                    <span class="career-project-thumb career-project-thumb-blue" aria-hidden="true">DL</span>
-                    <span>DocLocum</span>
-                    <b aria-hidden="true">&nearr;</b>
-                  </a>
-                  <a class="career-project-link" href="project-detail.html?project=medicare-mover">
-                    <span class="career-project-thumb career-project-thumb-sun" aria-hidden="true">MM</span>
-                    <span>Medicare Mover</span>
-                    <b aria-hidden="true">&nearr;</b>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
+        <div class="career-timeline" data-career-journey="work"></div>
+      </section>
 
-          <article class="career-entry career-entry-independent">
-            <div class="career-date">
-              <span>Ongoing</span>
-              <span>Independent</span>
-            </div>
-            <div class="career-track" aria-hidden="true"><span></span></div>
-            <div class="career-content">
-              <div class="career-heading">
-                <div>
-                  <span class="career-company">Independent work</span>
-                  <h3>Product experiments &amp; open source</h3>
-                </div>
-                <span class="career-context">Outside the day job</span>
-              </div>
-              <p>Small products, developer tools, and experiments that turn curiosity into something people can use.</p>
-              <div class="career-projects">
-                <span class="meta-label">Projects</span>
-                <div class="career-project-grid">
-                  <a class="career-project-link" href="project-detail.html?project=tadaa">
-                    <span class="career-project-thumb career-project-thumb-pink" aria-hidden="true">TD</span>
-                    <span>Tadaa</span>
-                    <b aria-hidden="true">&nearr;</b>
-                  </a>
-                  <a class="career-project-link" href="project-detail.html?project=whats-new-kit">
-                    <span class="career-project-thumb career-project-thumb-ink" aria-hidden="true">WN</span>
-                    <span>whats_new_kit</span>
-                    <b aria-hidden="true">&nearr;</b>
-                  </a>
-                  <a class="career-project-link" href="project-detail.html?project=iqka-pos">
-                    <span class="career-project-thumb career-project-thumb-lilac" aria-hidden="true">IQ</span>
-                    <span>IQKA POS</span>
-                    <b aria-hidden="true">&nearr;</b>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
+      <section id="internships" class="career-panel career-panel-internships content-panel bento-panel bento-enter md:col-span-12" aria-labelledby="internships-title">
+        <div class="section-heading">
+          <h2 id="internships-title">Internships</h2>
         </div>
+
+        <div class="career-timeline" data-career-journey="internships"></div>
       </section>
 
       <section id="selected-projects" class="selected-projects-heading content-panel bento-panel bento-enter md:col-span-12" aria-labelledby="selected-projects-title">
@@ -140,7 +71,7 @@
             <h2 id="selected-projects-title">Selected projects</h2>
             <p>Projects are the evidence: products, tools, and experiments with different contexts and different shapes.</p>
           </div>
-          <span class="section-index" aria-hidden="true">02</span>
+          <span class="section-index" aria-hidden="true">03</span>
         </div>
         <div class="filter-row work-filter-row" aria-label="Filter projects">
           <button class="filter-chip active" data-filter="all">All</button>
@@ -311,6 +242,7 @@
 </main>
 
 <script src="assets/data/marquee.js"></script>
+<script src="assets/data/career-journey.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
