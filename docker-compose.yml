@@ -1,7 +1,14 @@
 services:
-  web:
+  fahrendra-khoirul:
     build:
       context: .
     ports:
-      - "8080:80"
+      - "80"
     restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
+
