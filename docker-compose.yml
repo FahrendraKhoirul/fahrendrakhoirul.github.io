@@ -2,7 +2,7 @@ services:
   fahrendra-khoirul:
     build:
       context: .
-    ports:
+    expose:
       - "80"
     restart: unless-stopped
     networks:
