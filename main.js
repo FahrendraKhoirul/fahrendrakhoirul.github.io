@@ -511,21 +511,83 @@ function initCareerJourney() {
     return article;
   };
 
+  const internshipSurfaces = ["#bfe8db", "#dbe8f5", "#e8dff2", "#f4cbca", "#ffb743", "#cfe2d0"];
+
+  const createInternshipCard = (entry, index) => {
+    const article = document.createElement("article");
+    const body = document.createElement("div");
+    const role = document.createElement("h3");
+    const company = document.createElement("span");
+    const location = document.createElement("span");
+    const period = document.createElement("time");
+
+    article.className = "internship-card";
+    article.style.setProperty("--internship-surface", internshipSurfaces[index % internshipSurfaces.length]);
+    article.style.setProperty("--internship-tilt", `${(Math.random() * 14 - 7).toFixed(2)}deg`);
+    body.className = "internship-card-body";
+    role.textContent = entry.role;
+    company.className = "internship-company";
+    company.textContent = entry.organization;
+    location.className = "internship-location";
+    location.textContent = entry.location;
+    period.className = "internship-period";
+    period.dateTime = entry.startDate;
+    period.textContent = entry.period;
+
+    body.append(role, company, location, period);
+    article.append(createCompanyMark(entry), body);
+    return article;
+  };
+
   const groups = [
     {
       timeline: document.querySelector('[data-career-journey="work"]'),
       entries: entries.filter((entry) => entry.employmentType !== "Internship"),
+      render: (list) => list.map(createEntry),
     },
     {
       timeline: document.querySelector('[data-career-journey="internships"]'),
       entries: entries.filter((entry) => entry.employmentType === "Internship"),
+      render: (list) => list.map(createInternshipCard),
     },
   ];
 
-  groups.forEach(({ timeline, entries: groupEntries }) => {
+  groups.forEach(({ timeline, entries: groupEntries, render }) => {
     if (!timeline) return;
     const sortedEntries = [...groupEntries].sort((left, right) => right.startDate.localeCompare(left.startDate));
-    timeline.replaceChildren(...sortedEntries.map(createEntry));
+    timeline.replaceChildren(...render(sortedEntries));
+  });
+
+  const internshipMeta = document.querySelector("[data-internships-meta]");
+  const internshipCount = entries.filter((entry) => entry.employmentType === "Internship").length;
+  if (internshipMeta && internshipCount) {
+    internshipMeta.textContent = `${internshipCount} ${internshipCount === 1 ? "role" : "roles"}`;
+  }
+}
+
+// ============================================
+// Internships disclosure (projects.html)
+// ============================================
+function initCareerDisclosure() {
+  const toggle = document.querySelector("[data-internships-toggle]");
+  const panel = document.querySelector("[data-internships-panel]");
+  if (!toggle || !panel) return;
+
+  const setExpanded = (expanded) => {
+    toggle.setAttribute("aria-expanded", String(expanded));
+    panel.hidden = !expanded;
+  };
+
+  toggle.addEventListener("click", () => {
+    setExpanded(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  document.querySelectorAll("[data-internships-open]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      setExpanded(true);
+      panel.closest(".career-disclosure")?.scrollIntoView({ block: "start" });
+    });
   });
 }
 
@@ -837,6 +899,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initStagger();
   initProjectFilter();
   initCareerJourney();
+  initCareerDisclosure();
   initProjectDetail();
   initAwards();
 });

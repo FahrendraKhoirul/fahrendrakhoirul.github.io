@@ -31,7 +31,7 @@
           <h1 id="work-title" class="page-title">Work &amp; Projects.</h1>
           <nav class="work-view-nav" aria-label="Work sections">
             <a class="work-view-link" href="#work-experience">Work experience <b aria-hidden="true">&darr;</b></a>
-            <a class="work-view-link" href="#internships">Internships <b aria-hidden="true">&darr;</b></a>
+            <a class="work-view-link" href="#internships" data-internships-open>Internships <b aria-hidden="true">&darr;</b></a>
             <a class="work-view-link" href="#selected-projects">Selected projects <b aria-hidden="true">&darr;</b></a>
           </nav>
         </div>
@@ -54,14 +54,25 @@
         </div>
 
         <div class="career-timeline" data-career-journey="work"></div>
-      </section>
 
-      <section id="internships" class="career-panel career-panel-internships content-panel bento-panel bento-enter md:col-span-12" aria-labelledby="internships-title">
-        <div class="section-heading">
-          <h2 id="internships-title">Internships</h2>
+        <div class="career-disclosure" id="internships">
+          <button
+            class="career-disclosure-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="internships-panel"
+            data-internships-toggle
+          >
+            <span class="career-disclosure-heading">
+              <span class="career-disclosure-title">Internships</span>
+              <span class="career-disclosure-meta" data-internships-meta></span>
+            </span>
+            <span class="career-disclosure-icon" aria-hidden="true">&darr;</span>
+          </button>
+          <div class="career-disclosure-panel" id="internships-panel" data-internships-panel hidden>
+            <div class="internship-grid" data-career-journey="internships"></div>
+          </div>
         </div>
-
-        <div class="career-timeline" data-career-journey="internships"></div>
       </section>
 
       <section id="selected-projects" class="selected-projects-heading content-panel bento-panel bento-enter md:col-span-12" aria-labelledby="selected-projects-title">
