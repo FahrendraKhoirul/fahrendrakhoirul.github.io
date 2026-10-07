@@ -2080,39 +2080,26 @@
     outline-offset: 2px;
   }
 
-  .career-disclosure-heading {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.625rem;
-  }
-
+  /* Matches the "Work" section heading (sans variant inside .career-panel). */
   .career-disclosure-title {
     font-family: var(--font-sans);
-    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 500;
-    line-height: 1.3;
-  }
-
-  .career-disclosure-meta {
-    color: var(--color-ink-soft);
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    line-height: 1;
+    text-wrap: balance;
   }
 
   .career-disclosure-icon {
     display: grid;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
     flex: 0 0 auto;
     place-items: center;
     border: 1px solid rgb(29 35 48 / 13%);
     border-radius: 9999px;
     background: white;
     color: var(--color-brand);
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     transition: transform 320ms var(--ease-out-expo), border-color 220ms ease-out;
   }
 

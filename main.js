@@ -557,12 +557,6 @@ function initCareerJourney() {
     const sortedEntries = [...groupEntries].sort((left, right) => right.startDate.localeCompare(left.startDate));
     timeline.replaceChildren(...render(sortedEntries));
   });
-
-  const internshipMeta = document.querySelector("[data-internships-meta]");
-  const internshipCount = entries.filter((entry) => entry.employmentType === "Internship").length;
-  if (internshipMeta && internshipCount) {
-    internshipMeta.textContent = `${internshipCount} ${internshipCount === 1 ? "role" : "roles"}`;
-  }
 }
 
 // ============================================
